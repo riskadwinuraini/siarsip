@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ArchiveController;
+use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,6 +16,7 @@ Route::get('/dashboard', function () {
 
 Route::middleware(['auth', 'verified'])->group(function(){
     Route::resource('archive', ArchiveController::class);
+    Route::resource('employee', EmployeeController::class);
 });
 
 

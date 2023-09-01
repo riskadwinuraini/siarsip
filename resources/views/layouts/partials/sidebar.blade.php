@@ -1,7 +1,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link" href="../../index.html">
+        <a class="nav-link" href="{{ route('dashboard') }}">
           <i class="icon-grid menu-icon"></i>
           <span class="menu-title">Dashboard</span>
         </a>
@@ -14,7 +14,7 @@
         </a>
         <div class="collapse" id="auth">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="javascript:void(0)"> Pegawai </a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('employee.index') }}"> Pegawai </a></li>
             <li class="nav-item"> <a class="nav-link" href="#"> Register </a></li>
           </ul>
         </div>
