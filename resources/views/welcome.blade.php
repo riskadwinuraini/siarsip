@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('guest.app')
 
 @section('content')
 <div class=" container-scroller">
