@@ -1,58 +1,131 @@
-@extends('guest.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-<div class=" container-scroller">
-    <div class="container-fluid page-body-wrapper full-page-wrapper">
-      <div class="main-panel w-100  documentation">
-        <div class="content-wrapper">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-12 pt-5 text-center">
-                <h3 class="text-uppercase">Daftar tata naskah kepegawaian pppk badan kepegawaian dan pengembangan sumber daya manusia</h3>
-              </div>
-            </div>
-            <div class="row pt-5 justify-content-center mt-5">
-              <div class="col-6 pt-5 ">
-                <div class="card">
-                    <div class="card-body">
-                        <form class="forms-sample">
-                          <x-form label="Upload CPPK" name="CPPPK"/>
-                          <x-form label="Pas Foto (4x6)" name="passPhoto" short="Foto wajib berwarna, warna dasar biru, sebanyak 3 lembar"/>
-                          <x-form label="Daftar riwayat Hidup" name="history"/>
-                          <x-form label="Formulir FIP 01" name="form_fip_1"/>
-                          <x-form label="Formulir FIP 02" name="form_fip_2"/>
-                          <x-form label="Model Data Keluarga" name="model_dk" short="(Data Keluarga Lengkap walaupun tidak termasuk tunjangan gaji)" />
-                          <x-form label="Surat Perintah Melaksanakan Tugas" name="spmt"/>
-                          <x-form label="Foto Ijazah" name="form_fip_2" shor="Foto ijazah s.d terakhir"/>
-                          <x-form label="Fotokopi Sertifikat pendidikan pelatihan" name="sertivicate"/>
-                          <x-form label="Akta nikah" name="spmt"/>
-                          <x-form label="Akta kelahiran anak" name="spmt"/>
-                          <x-form label="Fotokopi KTP" name="spmt"/>
-                          <x-form label="Fotokopi surat kematian istr/suami/anak" name="spmt"/>
-                          <x-form label="Fotokopi akta perceraian" name="spmt"/>
-                          <x-form label="Fotokopi akta BPJS" name="spmt"/>
-                          <x-form label="Fotokopi NPWP" name="spmt"/>
-                          <x-form label="Fotokopi SK tanda kehormatan/jasa/penghargaan" name="spmt"/>
-                          <x-form label="Sertifikasi/kompetisi" name="spmt"/>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-                          <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                          <button class="btn btn-light">Cancel</button>
-                        </form>
-                      </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- partial:../../partials/_footer.html -->
-        <footer class="footer">
-      <div class="d-sm-flex justify-content-center justify-content-sm-between">
-        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.  Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
-        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
+  <title>Lumia Bootstrap Template - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="landingpages/img/favicon.png" rel="icon">
+  <link href="landingpages/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="landingpages/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="landingpages/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="landingpages/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="landingpages/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="landingpages/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="landingpages/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Lumia
+  * Updated: Jul 27 2023 with Bootstrap v5.3.1
+  * Template URL: https://bootstrapmade.com/lumia-bootstrap-business-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <div class="logo me-auto">
+        <h1><a href="index.html">Lumia</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="landingpages/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
-    </footer>
-        <!-- partial -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="container text-center text-md-left" data-aos="fade-up">
+      <h1>Welcome to <span>Lumia</span></h1>
+      <h2>We are team of talented designers making websites with Bootstrap</h2>
+      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+    </div>
+  </section><!-- End Hero -->
+
+  
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Lumia</h3>
+            <p>
+              A108 Adam Street <br>
+              New York, NY 535022<br>
+              United States <br><br>
+              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> info@example.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+        </div>
       </div>
     </div>
-  </div>    
-@endsection
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Badan Kepegawaian dan Pengembangan Sumber Daya Manusia (BKPSDM) Kabupaten Bondowoso</span></strong>
+        </div>
+        
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="landingpages/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="landingpages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="landingpages/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="landingpages/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="landingpages/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="landingpages/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="landingpages/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="landingpages/js/main.js"></script>
+
+</body>
+
+</html>
