@@ -7,11 +7,13 @@
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
               <div class="brand-logo">
-                <img src="{{ asset('assets/images/logo.svg')}}" alt="logo">
+                <center>
+                <img src="{{ asset('assets/images/file-icons/1.png')}}" alt="logo">
+              </center>
               </div>
               <h4>Login sebagai admin</h4>
               <h6 class="font-weight-light">masukkan email dan password dengan benar.</h6>
-              <form class="pt-3" method="POST" action="{{ route('login') }}" autocomplete="off">
+              <form class="pt-1" method="POST" action="{{ route('login') }}" autocomplete="off">
                 @csrf
                 <div class="form-group">
                   <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email  ">
