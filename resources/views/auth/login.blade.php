@@ -8,7 +8,7 @@
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
               <div class="brand-logo">
                 <center>
-                <img src="{{ asset('assets/images/file-icons/1.png')}}" alt="logo">
+                <img src="{{ asset('assets/images/file-icons/Logo.png')}}" alt="logo">
               </center>
               </div>
               <h4>Login sebagai admin</h4>
