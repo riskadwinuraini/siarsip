@@ -11,7 +11,10 @@
                 <img src="{{ asset('assets/images/file-icons/Logo.png')}}" alt="logo">
               </center>
               </div>
-              <h4>Login sebagai admin</h4>
+              <center>
+                <h4>Login sebagai admin</h4>
+              </center>
+              
               <h6 class="font-weight-light">masukkan email dan password dengan benar.</h6>
               <form class="pt-1" method="POST" action="{{ route('login') }}" autocomplete="off">
                 @csrf

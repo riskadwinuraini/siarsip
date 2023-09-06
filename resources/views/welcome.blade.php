@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Lumia Bootstrap Template - Index</title>
+  <title>siarsipbkpsdmkabbondowoso.id</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="landingpages/img/favicon.png" rel="icon">
+  <link href="assets/images/file-icons/Logo.png" rel="icon">
   <link href="landingpages/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -42,7 +42,7 @@
     <div class="container d-flex align-items-center">
 
       <div class="logo me-auto">
-        <h1><a href="index.html">Lumia</a></h1>
+          <img src="{{ asset('assets/images/file-icons/Logo.png')}}" alt="logo">
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="landingpages/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -53,9 +53,9 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="container text-center text-md-left" data-aos="fade-up">
-      <h1>Welcome to <span>Lumia</span></h1>
-      <h2>We are team of talented designers making websites with Bootstrap</h2>
-      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+      <h1>Selamat Datang di SI ARSIP </h1>
+      <h2>Sistem Informasi Management Arsip BKPSDM Kab.Bondowoso</h2>
+      <a href="#about" class="btn-get-started scrollto">Login</a>
     </div>
   </section><!-- End Hero -->
 
@@ -69,25 +69,15 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Lumia</h3>
+            <h3>Tentang kami</h3>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              Jl. KH Ashari No.123, Blk.Timur, Kademangan <br>
+              Kec. Bondowoso, kab.Bondowoso<br>
+              Jawa Timur, 68217 <br><br>
+              <strong>Phone:</strong> (0332) 429 584<br>
+              <strong>Email:</strong> admin@bkpsdm.bondowosokab.go.id<br>
+              <strong>website:</strong> http://bkpsdm.bondowosokab.go.id<br>
             </p>
-          </div>
-
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
           </div>
 
         </div>
