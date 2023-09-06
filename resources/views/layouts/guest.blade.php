@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>siarsipbkpsdmkabbondowoso.id</title>
 
         <!-- plugins:css -->
         <link rel="stylesheet" href="/assets/vendors/feather/feather.css">

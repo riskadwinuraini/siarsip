@@ -55,7 +55,7 @@
     <div class="container text-center text-md-left" data-aos="fade-up">
       <h1>Selamat Datang di SI ARSIP </h1>
       <h2>Sistem Informasi Management Arsip BKPSDM Kab.Bondowoso</h2>
-      <a href="#about" class="btn-get-started scrollto">Login</a>
+      <a href="{{ route('login')}}" class="btn-get-started scrollto">Login</a>
     </div>
   </section><!-- End Hero -->
 

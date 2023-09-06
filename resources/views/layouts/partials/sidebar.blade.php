@@ -15,7 +15,7 @@
         <div class="collapse" id="auth">
           <ul class="nav flex-column sub-menu">
             <li class="nav-item"> <a class="nav-link" href="{{ route('employee.index') }}"> Pegawai </a></li>
-            <li class="nav-item"> <a class="nav-link" href="#"> Register </a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('cupboard.index') }}"> Lemari </a></li>
           </ul>
         </div>
       </li>
