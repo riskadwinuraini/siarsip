@@ -29,7 +29,31 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        return to_route($this->redirectToRoute());
+    }
+
+    private function redirectToRoute()
+    {
+        $user = Auth::user();
+        if ($user->hasRole('admin')) {
+            return 'admin.dashboard';
+        }elseif ($user->hasRole('employee')) {
+            return 'employee.dashboard';
+        }else{
+            return back();
+        }
+        // $redirects = [
+        //     'admin' => 'admin.dashboard',
+        //     'employee' => 'employee.dashboard'
+        // ];
+
+        // foreach ($redirects as $role => $route) {
+        //     if ($user->hasRole($role)) {
+        //         return redirect()->route($route);
+        //     }
+
+        //     return $route;
+        // }
     }
 
     /**
