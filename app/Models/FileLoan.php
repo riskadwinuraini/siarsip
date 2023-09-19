@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class FileLoan extends Model
 {
     use HasFactory;
+
+
+    protected $fillable = [
+        'user_id',
+        'information',
+        'loan_date',
+        'return_date',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

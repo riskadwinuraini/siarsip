@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\FileLoan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Spatie\Permission\Models\Role;
 
 class FileLoanController extends Controller
 {
@@ -13,7 +14,9 @@ class FileLoanController extends Controller
      */
     public function index()
     {
-        return view('admin.loan.index');
+        $files = FileLoan::with('user')->get();
+
+        return view('admin.loan.index', compact('files'));
     }
 
     /**
@@ -21,7 +24,18 @@ class FileLoanController extends Controller
      */
     public function create()
     {
-        return view('admin.loan.create');
+        // Temukan peran "employee" berdasarkan nama
+        $employeeRole = Role::where('name', 'employee')->first();
+
+        if (!$employeeRole) {
+            // Handle jika peran "employee" tidak ditemukan
+            abort(404, 'Role not found');
+        }
+
+        // Temukan semua pengguna dengan peran "employee"
+        $employees = $employeeRole->users;
+
+        return view('admin.loan.create', compact('employees'));
     }
 
     /**
@@ -29,7 +43,14 @@ class FileLoanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        FileLoan::create([
+            'user_id' => $request->user_id,
+            'information' => $request->information,
+            'loan_date' => $request->loan_date,
+            'return_date' => $request->return_date
+        ]);
+
+        return redirect()->route('admin.loan.index');
     }
 
     /**

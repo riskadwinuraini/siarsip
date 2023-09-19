@@ -20,6 +20,14 @@
                   </tr>
                 </thead>
                 <tbody>
+                  @foreach ($files as $file)
+                      <tr>
+                        <td>{{ $file->user->name }}</td>
+                        <td>{{ $file->information }}</td>
+                        <td>{{ $file->load_date }}</td>
+                        <td>{{ $file->return_date }}</td>
+                      </tr>
+                  @endforeach
                 </tbody>
               </table>
             </div>
