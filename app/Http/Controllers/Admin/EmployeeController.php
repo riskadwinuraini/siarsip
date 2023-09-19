@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
 
 class EmployeeController extends Controller
 {
@@ -13,7 +16,16 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        return view('employee.index');
+        // Cari peran "employee"
+        $employeeRole = Role::where('name', 'employee')->first();
+
+        if ($employeeRole) {
+            // Dapatkan pengguna yang memiliki peran "employee"
+            $employees = $employeeRole->users;
+
+            // Kirim data pengguna dengan peran "employee" ke tampilan
+            return view('admin.employee.index', ['employees' => $employees]);
+        }
     }
 
     /**
@@ -21,7 +33,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        return view('employee.create');
+        return view('admin.employee.create');
     }
 
     /**
@@ -29,7 +41,22 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validasi input dari form
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email|unique:users',
+        ]);
+
+        // Membuat user baru
+        $attr = $request->all();
+        $attr['password'] = Hash::make('password');
+        $user = User::create($attr);
+
+        // Menetapkan peran "employee" untuk user baru
+        $employeeRole = Role::where('name', 'employee')->first();
+        $user->assignRole($employeeRole);
+
+        return redirect()->route('admin.employee.index');
     }
 
     /**
@@ -43,7 +70,7 @@ class EmployeeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Employee $employee)
+    public function edit(User $employee)
     {
         //
     }
@@ -51,7 +78,7 @@ class EmployeeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Employee $employee)
+    public function update(Request $request, User $employee)
     {
         //
     }
@@ -59,8 +86,17 @@ class EmployeeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Employee $employee)
+    public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        // Pastikan pengguna memiliki peran "employee" sebelum dihapus
+        if ($user->hasRole('employee')) {
+            $user->delete();
+    
+            return redirect()->route('employee.index')->with('success', 'Pengguna berhasil dihapus.');
+        } else {
+            return redirect()->route('employee.index')->with('error', 'Pengguna tidak memiliki peran "employee".');
+        }
     }
 }

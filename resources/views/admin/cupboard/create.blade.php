@@ -6,10 +6,11 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-title">
-                        Form tambah Pegawai
+                        Form tambah lemari
                     </div>
-                    <form class="forms-sample">
-                        @include('employee.partials.form-control')
+                    <form class="forms-sample" method="POST" action="{{ route('admin.cupboard.store') }}">
+                        @csrf
+                        @include('admin.cupboard.partials.form-control')
                     </form>
                 </div>
             </div>

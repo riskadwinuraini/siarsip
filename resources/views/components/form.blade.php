@@ -6,12 +6,6 @@
 
 <div class="form-group">
     <label>{{ $label }}</label>
-    <input type="file" name="{{ $name }}" class="file-upload-default">
-    <div class="input-group col-xs-12">
-      <input type="text" class="form-control file-upload-info" disabled placeholder="Upload file berkas bentuk pdf">
-      <span class="input-group-append">
-        <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-      </span>
-    </div>
+    <input type="text" name="{{ $name }}" class="form-control">
     <span class="text-muted mt-4">{{ $short ?? $slot }}</span>
-  </div>
+</div>

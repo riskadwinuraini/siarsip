@@ -6,7 +6,7 @@
           <div class="card-body">
             <h4 class="card-title">Data Arsip</h4>
             <div class="card-description">
-                <a href="{{ route('employee.create') }}" class="btn btn-primary">Tambah Pegawai Baru</a>
+                <a href="{{ route('admin.employee.create') }}" class="btn btn-primary">Tambah Pegawai Baru</a>
             </div>
             <div class="table-responsive">
               <table class="table table-striped">
@@ -36,12 +36,29 @@
                   </tr>
                 </thead>
                 <tbody>
-
+                  @foreach ($employees as $employee)
+                      <tr>
+                        <td>{{ $employee->name }}</td>
+                        <td>{{ $employee->nip }}</td>
+                        <td>{{ $employee->gender }}</td>
+                        <td>{{ $employee->email }}</td>
+                        <td>{{ $employee->no }}</td>
+                        <td>{{ $employee->status }}</td>
+                        <td>
+                          <a href="#" class="btn btn-info">Edit</a>
+                          <form action="{{ route('admin.employee.destroy', $employee->id) }}" method="POST">
+                              @csrf
+                              @method('DELETE')
+                              <a href="{{ route('admin.employee.destroy', $employee->id) }}" class="btn btn-danger">Hapus</a>
+                          </form>
+                        </td>
+                      </tr>
+                  @endforeach
                 </tbody>
               </table>
             </div>
           </div>
         </div>
-      </div>
+    </div>
 </div>
 @endsection

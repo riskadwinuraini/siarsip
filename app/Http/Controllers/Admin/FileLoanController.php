@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\TypeFile;
+use App\Models\FileLoan;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class ArchiveController extends Controller
+class FileLoanController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $typeFiles = TypeFile::all(); 
-        return view('admin.archive.index', compact('typeFiles'));
+        return view('admin.loan.index');
     }
 
     /**
@@ -22,7 +21,7 @@ class ArchiveController extends Controller
      */
     public function create()
     {
-        return view('archive.create');
+        return view('admin.loan.create');
     }
 
     /**
@@ -36,7 +35,7 @@ class ArchiveController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(FileLoan $fileLoan)
     {
         //
     }
@@ -44,7 +43,7 @@ class ArchiveController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(FileLoan $fileLoan)
     {
         //
     }
@@ -52,7 +51,7 @@ class ArchiveController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, FileLoan $fileLoan)
     {
         //
     }
@@ -60,7 +59,7 @@ class ArchiveController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(FileLoan $fileLoan)
     {
         //
     }
