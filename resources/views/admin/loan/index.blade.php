@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('content')
 <div class="row">
+  <div class="col-lg-12 grid-margin stretch-card">
+    
+  </div>
+</div>
+<div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
@@ -16,7 +21,7 @@
                     <th>Keterangan</th>
                     <th>Tanggal Pinjam</th>
                     <th>Tanggal Pengembalian</th>
-                    <th>Action</th>
+                    <th>Status</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -24,8 +29,11 @@
                       <tr>
                         <td>{{ $file->user->name }}</td>
                         <td>{{ $file->information }}</td>
-                        <td>{{ $file->load_date }}</td>
+                        <td>{{ $file->loan_date }}</td>
                         <td>{{ $file->return_date }}</td>
+                        <td>
+                          <input type="checkbox">
+                        </td>
                       </tr>
                   @endforeach
                 </tbody>
