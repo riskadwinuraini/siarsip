@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Cupboard;
 use Illuminate\Http\Request;
 
+
+# clean up this code
+
 class CupboardController extends Controller
 {
     /**
@@ -13,15 +16,16 @@ class CupboardController extends Controller
      */
     public function index()
     {
-        return view('cupboard.index');
+        $cupboards = Cupboard::all();
+        return view('admin.cupboard.index', compact('cupboards'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Cupboard $cupboard)
     {
-        return view('cupboard.create');;
+        return view('admin.cupboard.create', compact('cupboard'));
     }
 
     /**
@@ -29,7 +33,8 @@ class CupboardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $cupboard = Cupboard::create($request->all());
+       return to_route('admin.cupboard.index');
     }
 
     /**
@@ -45,7 +50,7 @@ class CupboardController extends Controller
      */
     public function edit(Cupboard $cupboard)
     {
-        //
+        return view('admin.cupboard.edit', compact('cupboard'));
     }
 
     /**
@@ -53,7 +58,8 @@ class CupboardController extends Controller
      */
     public function update(Request $request, Cupboard $cupboard)
     {
-        //
+        $cupboard->update($request->all());
+        return to_route('admin.cupboard.index');
     }
 
     /**
@@ -61,6 +67,8 @@ class CupboardController extends Controller
      */
     public function destroy(Cupboard $cupboard)
     {
-        //
+        $cupboard->delete();
+        return to_route('admin.cupboard.index');
+
     }
 }

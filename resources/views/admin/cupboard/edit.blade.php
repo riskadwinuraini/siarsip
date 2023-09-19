@@ -6,10 +6,12 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-title">
-                        Form tambah lemari
+                        Form Edit lemari
                     </div>
-                    <form class="forms-sample">
-                        @include('cupboard.partials.form-control')
+                    <form class="forms-sample" method="POST" action="{{ route('admin.cupboard.update', $cupboard->id) }}">
+                        @csrf
+                        @method('patch')
+                        @include('admin.cupboard.partials.form-control')
                     </form>
                 </div>
             </div>

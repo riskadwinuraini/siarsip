@@ -42,18 +42,6 @@ class AuthenticatedSessionController extends Controller
         }else{
             return back();
         }
-        // $redirects = [
-        //     'admin' => 'admin.dashboard',
-        //     'employee' => 'employee.dashboard'
-        // ];
-
-        // foreach ($redirects as $role => $route) {
-        //     if ($user->hasRole($role)) {
-        //         return redirect()->route($route);
-        //     }
-
-        //     return $route;
-        // }
     }
 
     /**
