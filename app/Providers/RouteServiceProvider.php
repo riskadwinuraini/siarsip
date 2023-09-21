@@ -35,6 +35,7 @@ class RouteServiceProvider extends ServiceProvider
 
             Route::middleware('web')->group(function() {
             
+
                 Route::prefix('admin')
                     ->middleware('auth')
                     ->name('admin.')
