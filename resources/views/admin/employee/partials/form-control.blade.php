@@ -8,7 +8,7 @@
 </div>
 <div class="form-group">
     <label>Jenis PPPK</label>
-    <select name="type_ppk" id="jenis_pppk" class="form-control">
+    <select name="type_pppk" id="jenis_pppk" class="form-control">
         <option value="">Pilih</option>
         <option value="pns">PNS</option>
         <option value="p3k">P3K</option>

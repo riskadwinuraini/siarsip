@@ -47,7 +47,8 @@ class FileLoanController extends Controller
             'user_id' => $request->user_id,
             'information' => $request->information,
             'loan_date' => $request->loan_date,
-            'return_date' => $request->return_date
+            'return_date' => $request->return_date,
+            'status' => true
         ]);
 
         return redirect()->route('admin.loan.index');
@@ -72,9 +73,20 @@ class FileLoanController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, FileLoan $fileLoan)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            'fileId' => 'required|integer',
+            'status' => 'required|boolean',
+        ]);
+
+        // Perbarui status file di sini, misalnya menggunakan Eloquent
+        $file = FileLoan::find($request->input('fileId'));
+        $file->status = $request->input('status');
+        $file->save();
+
+        return response()->json(['message' => 'Status berhasil diperbarui']);
+
     }
 
     /**

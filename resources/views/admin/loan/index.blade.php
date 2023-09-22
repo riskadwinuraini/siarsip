@@ -32,7 +32,7 @@
                         <td>{{ $file->loan_date }}</td>
                         <td>{{ $file->return_date }}</td>
                         <td>
-                          <input type="checkbox">
+                          <input type="checkbox" value="{{ $file->status }}" {{ ($file->status == 1) ? 'checked' : '' }} data-id="{{ $file->id }}" class="status-checkbox">
                         </td>
                       </tr>
                   @endforeach
@@ -44,3 +44,35 @@
       </div>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+  $(document).ready(function() {
+    // Menambahkan event handler untuk perubahan status checkbox
+    $('.status-checkbox').on('change', function() {
+      var checkbox = $(this);
+      var fileId = checkbox.data('id');
+      var isChecked = checkbox.prop('checked') ? 1 : 0;
+  
+      // Kirim permintaan Ajax ke server untuk memperbarui status
+      $.ajax({
+        type: 'POST',
+        url: '/admin/update-status', // Sesuaikan dengan URL rute Laravel Anda
+        data: {
+          _token: '{{ csrf_token() }}', // Tambahkan token CSRF untuk perlindungan
+          fileId: fileId,
+          status: isChecked
+        },
+        success: function(response) {
+          // Tindakan yang akan diambil setelah permintaan berhasil
+          console.log(response);
+        },
+        error: function(error) {
+          // Tindakan yang akan diambil jika ada kesalahan dalam permintaan
+          console.error(error);
+        }
+      });
+    });
+  });
+  </script>
+@endpush

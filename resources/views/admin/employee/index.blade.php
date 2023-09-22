@@ -45,7 +45,6 @@
                         <td>{{ $employee->no }}</td>
                         <td>{{ $employee->status }}</td>
                         <td>
-                          <a href="#" class="btn btn-info">Edit</a>
                           <form action="{{ route('admin.employee.destroy', $employee->id) }}" method="POST">
                               @csrf
                               @method('DELETE')
