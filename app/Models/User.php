@@ -23,7 +23,7 @@ class User extends Authenticatable
         'email',
         'password',
         'nip',
-        'type_ppk',
+        'type_pppk',
         'gender',
         'no',
         'work_unit',

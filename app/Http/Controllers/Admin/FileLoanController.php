@@ -47,7 +47,8 @@ class FileLoanController extends Controller
             'user_id' => $request->user_id,
             'information' => $request->information,
             'loan_date' => $request->loan_date,
-            'return_date' => $request->return_date
+            'return_date' => $request->return_date,
+            'status' => true
         ]);
 
         return redirect()->route('admin.loan.index');

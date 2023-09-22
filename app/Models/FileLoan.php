@@ -15,6 +15,7 @@ class FileLoan extends Model
         'information',
         'loan_date',
         'return_date',
+        'status'
     ];
 
     public function user()
