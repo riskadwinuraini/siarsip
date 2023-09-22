@@ -32,8 +32,8 @@
           </a>
           <div class="collapse" id="history">
             <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="/admin/history-pinjaman"> History Pinjaman </a></li>
-              <li class="nav-item"> <a class="nav-link" href="/admin/history-pengembalian"> History Pengembalian </a></li>
+              <li class="nav-item"> <a class="nav-link" href="/admin/history-pinjaman">Pinjaman </a></li>
+              <li class="nav-item"> <a class="nav-link" href="/admin/history-pengembalian">Pengembalian </a></li>
             </ul>
           </div>
         </li>

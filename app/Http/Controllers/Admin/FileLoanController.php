@@ -73,9 +73,20 @@ class FileLoanController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, FileLoan $fileLoan)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            'fileId' => 'required|integer',
+            'status' => 'required|boolean',
+        ]);
+
+        // Perbarui status file di sini, misalnya menggunakan Eloquent
+        $file = FileLoan::find($request->input('fileId'));
+        $file->status = $request->input('status');
+        $file->save();
+
+        return response()->json(['message' => 'Status berhasil diperbarui']);
+
     }
 
     /**
