@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\ArchiveController;
 use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Admin\CupboardController;
 use App\Http\Controllers\Admin\FileLoanController;
+use App\Http\Controllers\Admin\FilingController;
 use App\Http\Controllers\Admin\HistoryController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,6 @@ Route::post('/update-status', [FileLoanController::class, 'update']);
 
 Route::get('history-pinjaman', [HistoryController::class, 'loanHistory']);
 Route::get('history-pengembalian', [HistoryController::class, 'pengembalianHistory']);
+
+Route::get('pemberkasan', [FilingController::class, 'index'])->name('filing.index');
+Route::get('create-pemberkasan', [FilingController::class, 'create'])->name('filing.create');

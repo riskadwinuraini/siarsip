@@ -18,6 +18,7 @@
           </a>
           <div class="collapse" id="auth">
             <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="{{ route('admin.filing.index') }}"> Pemberkasan </a></li>
               <li class="nav-item"> <a class="nav-link" href="{{ route('admin.archive.index') }}"> Jenis Berkas </a></li>
               <li class="nav-item"> <a class="nav-link" href="{{ route('admin.loan.index') }}"> Transaksi </a></li>
               <li class="nav-item"> <a class="nav-link" href="{{ route('admin.employee.index') }}"> User </a></li>
