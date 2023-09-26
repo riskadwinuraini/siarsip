@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->integer('nip')->nullable();
+            $table->string('nip', 20)->nullable();
             $table->enum('type_pppk', ['p3k', 'pns'])
                 ->default('p3k');
             $table->string('no', 13)->nullable();
