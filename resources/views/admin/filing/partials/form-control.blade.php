@@ -5,8 +5,8 @@
 
 @foreach ($typefile as $item)
     <div class="form-group">
-        <label>{{$item->name}}</label>
-        <input type="file" name="nip" class="form-control">
+        <label>{{ $item->name }}</label>
+        <input type="file" name="{{ $item->id }}" class="form-control">
     </div>
 @endforeach
 

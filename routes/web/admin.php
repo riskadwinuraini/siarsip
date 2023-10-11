@@ -24,3 +24,4 @@ Route::get('history-pengembalian', [HistoryController::class, 'pengembalianHisto
 
 Route::get('pemberkasan', [FilingController::class, 'index'])->name('filing.index');
 Route::get('create-pemberkasan', [FilingController::class, 'create'])->name('filing.create');
+Route::post('process-create-document',[FilingController::class, 'proccessCreateDocument'])->name('proccessCreateDocument');
