@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\TypeFile;
 use App\Service\UserFileService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FilingController extends Controller
 {
@@ -22,16 +23,29 @@ class FilingController extends Controller
         $nip = $request->nip;
         $typefile = TypeFile::all();
 
-        
         foreach ($typefile as $fileType) {
             $file = $request->file($fileType->id);
  
-            // Cek apakah file ada dan valid
             if ($file) {
                 if ($file->isValid()) {
                     $fileName = $file->getClientOriginalName();
-                    // Di sini Anda bisa melakukan apa pun yang diperlukan dengan $fileName
-                    echo "Nama File Asli: $fileName <br>";
+                    $path = '/file-upload';
+
+                    $storagePath = $file->storeAs($path, $fileName );
+
+                    $typefile = DB::table('user_file')
+                                    ->insert([
+                                        'user_id' => $request->nip,
+                                        'type_file_id' => $fileType->id,
+                                        'file' => $storagePath
+                                    ]);
+
+                    if ($typefile) {
+                        return back()->with('success', 'File berhasil diunggah');
+                    } else {
+                        return back()->with('error', 'Gagal mengunggah file');
+                    }
+
                 } else {
                     echo "File tidak valid. <br>";
                 }
