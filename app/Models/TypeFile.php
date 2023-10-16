@@ -12,6 +12,6 @@ class TypeFile extends Model
     protected $table = 'type_files';
 
     protected $fillable = [
-        'name'
+        'code_file','name'
     ];
 }

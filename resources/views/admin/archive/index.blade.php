@@ -8,10 +8,10 @@
                   <div class="card-body">
                     <h4 class="card-title d-flex justify-content-between">
                         <input type="search" placeholder="Cari NIP" class="form-control w-25">
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Tambah Berkas</button>
+                        <a href="{{ route('admin.archive.create') }}" class="btn btn-primary">Tambah Berkas</a>
                     </h4>
 
-                    @include('admin.archive.modal')
+                    {{-- @include('admin.archive.modal') --}}
 
                     <div class="card-description">
                     </div>
@@ -41,7 +41,8 @@
                                   <form action="{{ route('admin.archive.destroy', $item->id) }}" method="POST">
                                       @csrf
                                       @method('DELETE')
-                                      <a href="{{ route('admin.archive.destroy', $item->id) }}" class="btn btn-danger">Hapus</a>
+                                      <button class="btn btn-danger" type="submit">Hapus</button>
+                                      {{-- <a href="{{ route('admin.archive.destroy', $item->id) }}" class="btn btn-danger">Hapus</a> --}}
                                   </form>
                                 </td>
                               </tr>

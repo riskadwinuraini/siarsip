@@ -41,10 +41,18 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
+
         // Validasi input dari form
         $request->validate([
             'name' => 'required|string',
             'email' => 'required|email|unique:users',
+            'nip' => 'required|max:18|number',
+            
+            'type_pppk' => 'required',
+            'gender' => 'required',
+            'status' => 'required',
+            
+            'no' => 'required'
         ]);
 
         // Membuat user baru

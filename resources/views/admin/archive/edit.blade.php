@@ -8,8 +8,9 @@
                     <div class="card-title">
                         Form Jenis Berkas
                     </div>
-                    <form class="forms-sample" action="{{ route('admin.archive.store') }}" method="POST">
+                    <form class="forms-sample" action="{{ route('admin.archive.update') }}" method="POST">
                         @csrf
+                        @method('PUT')
                         @include('admin.archive.partials.form-control')
                     </form>
                 </div>

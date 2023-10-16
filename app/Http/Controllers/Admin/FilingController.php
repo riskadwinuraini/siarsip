@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\TypeFile;
+use App\Models\User;
 use App\Service\UserFileService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -15,8 +16,14 @@ class FilingController extends Controller
     }
 
     public function create() {
+        
         $typefile = TypeFile::all();
-        return view('admin.filing.create', compact('typefile'));
+        $user = User::select('id', 'nip')->get();
+        
+        return view('admin.filing.create', [
+            'typefile' => $typefile,
+            'users' => $user
+        ]);
     }
     public function proccessCreateDocument(Request $request) {
         

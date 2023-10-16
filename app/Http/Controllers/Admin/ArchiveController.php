@@ -22,7 +22,8 @@ class ArchiveController extends Controller
      */
     public function create()
     {
-        return view('archive.create');
+
+        return view('admin.archive.create');
     }
 
     /**
@@ -30,7 +31,18 @@ class ArchiveController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'code_file' => 'required|string|max:255',
+            // Sesuaikan dengan field dan aturan validasi yang sesuai
+        ]);
+        
+        $attr = $request->all();
+
+        TypeFile::create($attr);
+        
+        return back();
     }
 
     /**
@@ -46,7 +58,7 @@ class ArchiveController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.archive.edit');
     }
 
     /**
@@ -62,6 +74,13 @@ class ArchiveController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        try {
+            $archive = TypeFile::findOrFail($id);
+            $archive->delete();
+
+            return redirect()->route('admin.archive.index')->with('success', 'Data berhasil dihapus.');
+        } catch (\Exception $e) {
+            return redirect()->route('admin.archive.index')->with('error', 'Gagal menghapus data: ' . $e->getMessage());
+        }
     }
 }

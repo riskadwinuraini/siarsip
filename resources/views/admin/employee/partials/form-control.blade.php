@@ -1,54 +1,99 @@
 <div class="form-group">
     <label>Nama</label>
-    <input type="text" name="name" class="form-control">
+    <input type="text" name="name" class="form-control @error('name') is-invalid @enderror">
+    @error('name')
+    <p class="text-danger">
+     {{ $message }}
+    </p>
+    @enderror
 </div>
 <div class="form-group">
     <label>NIP</label>
-    <input type="number" name="nip" class="form-control">
+    <input type="number" name="nip" class="form-control @error('number') is-invalid @enderror">
+    @error('nip')
+    <p class="text-danger">
+     {{ $message }}
+    </p>
+    @enderror
 </div>
 <div class="form-group">
     <label>Jenis PPPK</label>
-    <select name="type_pppk" id="jenis_pppk" class="form-control">
+    <select name="type_pppk" id="jenis_pppk" class="form-control @error('type_pppk') is-invalid @enderror">
         <option value="">Pilih</option>
         <option value="pns">PNS</option>
         <option value="p3k">P3K</option>
     </select>
+    @error('type_pppk')
+    <p class="text-danger">
+     {{ $message }}
+    </p>
+    @enderror
 </div>
-<div class="form-group" name="work_unit" id="unit_kerja_div" style="display: none">
+<div class="form-group" name="work_unit" id="unit_kerja_div" style="display: none @error('work_unit') is-invalid @enderror">
     <label>Unit Kerja</label>
     <input type="text" class="form-control">
+    @error('work_unit')
+    <p class="text-danger">
+     {{ $message }}
+    </p>
+    @enderror
 </div>
 <div class="form-group">
     <label>Jenis Kelamin</label>
     <div class="form-check">
         <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="gender" id="optionsRadios1" value="L">
+          <input type="radio" class="form-check-input" name="gender" id="optionsRadios1" value="L" @error('radio') is-invalid @enderror>
           Laki-laki
+          @error('gender')
+          <p class="text-danger">
+           {{ $message }}
+          </p>
+          @enderror
         <i class="input-helper"></i></label>
     </div>
     <div class="form-check">
     <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="gender" id="optionsRadios1" value="P">
+        <input type="radio" class="form-check-input" name="gender" id="optionsRadios1" value="P" @error('type_PPPK') is-invalid @enderror>
         Perempuan
+        @error('gender')
+        <p class="text-danger">
+         {{ $message }}
+        </p>
+        @enderror
     <i class="input-helper"></i></label>
     </div>
 </div>
 
 <div class="form-group">
     <label>Email</label>
-    <input type="email" name="email" class="form-control">
+    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror">
+    @error('email')
+    <p class="text-danger">
+     {{ $message }}
+    </p>
+    @enderror
 </div>
 <div class="form-group">
     <label>No.hp</label>
-    <input type="number" name="no" placeholder="628xxx" class="form-control">
+    <input type="number" name="no" placeholder="628xxx" class="form-control @error('number') is-invalid @enderror">
+    @error('no')
+    <p class="text-danger">
+     {{ $message }}
+    </p>
+    @enderror
 </div>
 <div class="form-group">
-    <label>Jenis PPPK</label>
-    <select name="status" id="jenis_pppk" class="form-control">
+    <label>status</label>
+    <select name="status" id="status" class="form-control @error('status') is-invalid @enderror">
         <option value="">Pilih</option>
         <option value="pns">Pensiun</option>
         <option value="aktif">aktif</option>
     </select>
+    @error('status')
+        <p class="text-danger">
+         {{ $message }}
+        </p>
+        @enderror
 </div>
 
 <button type="submit" class="btn btn-primary mr-2">Submit</button>

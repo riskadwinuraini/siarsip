@@ -1,6 +1,11 @@
 <div class="form-group">
     <label>NIP</label>
-    <input type="number" name="nip" class="form-control">
+    <select name="nip" class="form-control" id="js-example-single">
+        <option value="">Selected Option</option>
+        @foreach ($users as $user)
+            <option value="{{ $user->id }}">{{ $user->nip }}</option>
+        @endforeach
+    </select>
 </div>
 
 @foreach ($typefile as $item)
