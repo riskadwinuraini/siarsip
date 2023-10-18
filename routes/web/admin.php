@@ -19,8 +19,10 @@ Route::get('create-pinjaman', [FileLoanController::class, 'create'])->name('loan
 Route::post('store-pinjaman', [FileLoanController::class, 'store'])->name('loan.store');
 Route::post('/update-status', [FileLoanController::class, 'update']);
 
-Route::get('history-pinjaman', [HistoryController::class, 'loanHistory']);
-Route::get('history-pengembalian', [HistoryController::class, 'pengembalianHistory']);
+Route::get('history-pinjaman', [HistoryController::class, 'loanHistory'])->name('loan.story');
+Route::get('/export/history-pinjaman', [HistoryController::class, 'exportPinjaman']);
+Route::get('history-pengembalian', [HistoryController::class, 'pengembalianHistory'])->name('loan.return.history');
+Route::get('/export/history-pengembalian', [HistoryController::class, 'exportPengembalian']);
 
 Route::get('pemberkasan', [FilingController::class, 'index'])->name('filing.index');
 Route::get('create-pemberkasan', [FilingController::class, 'create'])->name('filing.create');

@@ -2,7 +2,7 @@
 @section('content')
 <div class="row">
   <div class="col-lg-12 grid-margin stretch-card">
-    
+    <a href="/admin/export/history-pengembalian" class="btn btn-primary">Export to Excel</a>
   </div>
 </div>
 <div class="row">
@@ -10,24 +10,7 @@
         <div class="card">
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th>Nama Peminjam</th>
-                    <th>Tanggal Pinjam</th>
-                    <th>Tanggal Pengembalian</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  @foreach ($loanHistories as $file)
-                      <tr>
-                        <td>{{ $file->user->name }}</td>
-                        <td>{{ $file->loan_date }}</td>
-                        <td>{{ $file->return_date }}</td>
-                      </tr>
-                  @endforeach
-                </tbody>
-              </table>
+                @include('admin.history.common.pengembalian-history-table')
             </div>
           </div>
         </div>
