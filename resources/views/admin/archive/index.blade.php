@@ -7,7 +7,6 @@
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title d-flex justify-content-between">
-                        <input type="search" placeholder="Cari NIP" class="form-control w-25">
                         <a href="{{ route('admin.archive.create') }}" class="btn btn-primary">Tambah Berkas</a>
                     </h4>
 
@@ -37,7 +36,7 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->name }}</td>
                                 <td>
-                                  <a href="#" class="btn btn-info">Edit</a>
+                                  <a href="{{ route('admin.archive.edit', $item->id) }}" class="btn btn-info">Edit</a>
                                   <form action="{{ route('admin.archive.destroy', $item->id) }}" method="POST">
                                       @csrf
                                       @method('DELETE')

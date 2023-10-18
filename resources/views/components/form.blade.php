@@ -1,12 +1,13 @@
 @props([
     'label' => '',
     'name' => '',
-    'short' => ''
+    'short' => '',
+    'value' => ''
 ])
 
 <div class="form-group">
     <label>{{ $label }}</label>
-    <input type="text" name="{{ $name }}" class="form-control @error($name) is-invalid @enderror">
+    <input type="text" name="{{ $name }}" value="{{ $value }}" class="form-control @error($name) is-invalid @enderror">
     @error($name)
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>

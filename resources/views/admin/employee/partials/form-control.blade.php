@@ -86,7 +86,7 @@
     <label>status</label>
     <select name="status" id="status" class="form-control @error('status') is-invalid @enderror">
         <option value="">Pilih</option>
-        <option value="pns">Pensiun</option>
+        <option value="pensiun">Pensiun</option>
         <option value="aktif">aktif</option>
     </select>
     @error('status')

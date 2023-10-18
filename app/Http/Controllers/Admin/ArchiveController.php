@@ -58,7 +58,9 @@ class ArchiveController extends Controller
      */
     public function edit(string $id)
     {
-        return view('admin.archive.edit');
+        return view('admin.archive.edit', [
+            'archiveId' => TypeFile::find($id)
+        ]);
     }
 
     /**
@@ -66,7 +68,11 @@ class ArchiveController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+     
+        $typeFile = TypeFile::find($id);
+        $typeFile->update($request->all());
+
+        return back();
     }
 
     /**

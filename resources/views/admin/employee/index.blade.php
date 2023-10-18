@@ -46,10 +46,10 @@
                         <td>{{ $employee->status }}</td>
                         <td>
                           <form action="{{ route('admin.employee.destroy', $employee->id) }}" method="POST">
-                              @csrf
-                              @method('DELETE')
-                              <a href="{{ route('admin.employee.destroy', $employee->id) }}" class="btn btn-danger">Hapus</a>
-                          </form>
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">Hapus</button>
+                        </form>                        
                         </td>
                       </tr>
                   @endforeach

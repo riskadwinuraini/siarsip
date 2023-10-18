@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('no', 13)->nullable();
             $table->string('work_unit')->nullable();
             $table->string('gender')->nullable();
-            $table->enum('status', ['aktif', 'pns'])
+            $table->enum('status', ['aktif', 'pensiun'])
                 ->default('aktif');
             $table->rememberToken();
             $table->timestamps();

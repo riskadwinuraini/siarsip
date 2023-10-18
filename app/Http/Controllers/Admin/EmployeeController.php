@@ -46,12 +46,10 @@ class EmployeeController extends Controller
         $request->validate([
             'name' => 'required|string',
             'email' => 'required|email|unique:users',
-            'nip' => 'required|max:18|number',
-            
+            'nip' => 'required|max:18',
             'type_pppk' => 'required',
             'gender' => 'required',
             'status' => 'required',
-            
             'no' => 'required'
         ]);
 
@@ -70,7 +68,7 @@ class EmployeeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Employee $employee)
+    public function show()
     {
         //
     }
@@ -98,13 +96,12 @@ class EmployeeController extends Controller
     {
         $user = User::findOrFail($id);
 
-        // Pastikan pengguna memiliki peran "employee" sebelum dihapus
         if ($user->hasRole('employee')) {
             $user->delete();
-    
-            return redirect()->route('employee.index')->with('success', 'Pengguna berhasil dihapus.');
+
+            return redirect()->route('admin.employee.index')->with('success', 'Pengguna berhasil dihapus.');
         } else {
-            return redirect()->route('employee.index')->with('error', 'Pengguna tidak memiliki peran "employee".');
+            return redirect()->route('admin.employee.index')->with('error', 'Pengguna tidak memiliki peran "employee".');
         }
     }
 }
