@@ -25,5 +25,12 @@ Route::get('history-pengembalian', [HistoryController::class, 'pengembalianHisto
 Route::get('/export/history-pengembalian', [HistoryController::class, 'exportPengembalian']);
 
 Route::get('pemberkasan', [FilingController::class, 'index'])->name('filing.index');
-Route::get('create-pemberkasan', [FilingController::class, 'create'])->name('filing.create');
+// upload data
+Route::get('pemberkasan/upload-pemberkasan/{id}/{id_file}',[FilingController::class,'uploadFile'])->name('filing.upload');
 Route::post('process-create-document',[FilingController::class, 'proccessCreateDocument'])->name('proccessCreateDocument');
+Route::get('create-pemberkasan', [FilingController::class, 'create'])->name('filing.create');
+// Edit data
+Route::get('pemberkasan/edit-upload-pemberkasan/{id}/{id_file}',[FilingController::class,'uploadFileEdit'])->name('filing.upload-edit');
+Route::post('process-edit-document',[FilingController::class, 'proccessEditDocument'])->name('proccessEditDocument');
+// show data
+Route::get('pemberkasan/show-upload-pemberkasan/{id}/{id_file}',[FilingController::class,'uploadFileShow'])->name('filing.show');
