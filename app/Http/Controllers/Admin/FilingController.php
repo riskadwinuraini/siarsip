@@ -47,12 +47,16 @@ class FilingController extends Controller
     public function proccessCreateDocument(Request $request) {
         foreach ($request->all() as $key => $value) {
             if (is_int($key) && $request->hasFile($key)) {
+
                 $cek = UserFile::where('user_id',$_POST['id'])->where('type_file_id',$key);
                 if ($cek->first() != null) {
                     return redirect()->route('admin.filing.index')->withError('Mohon maaf data sudah diinputkan.');
 
                 }
                 $file = $request->file($key) ;
+                if($file->extension() !== 'pdf') {
+                    return redirect()->route('admin.filing.index')->withError('Format Harus PDF.');
+                }
                 $date = Carbon::now()->format('ymdhis');
                 $fileName = $key.$date.'.'.$file->extension();
                 $path = '/public/file-upload';
@@ -85,7 +89,9 @@ class FilingController extends Controller
                 $file = $request->file($key) ;
                 $date = Carbon::now()->format('ymdhis');
                 $fileName = $key.$date.'.'.$file->extension();
-
+                if($file->extension() !== 'pdf') {
+                    return redirect()->route('admin.filing.index')->withError('Format Harus PDF.');
+                }
                 $path = '/public/file-upload';
 
                 $file->storeAs($path, $fileName);

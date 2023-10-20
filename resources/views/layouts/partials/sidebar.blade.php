@@ -1,7 +1,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link" 
+        <a class="nav-link"
           @role('admin') href="{{ route('admin.dashboard') }}" @endrole
           @role('employee') href="{{ route('employee.dashboard') }}" @endrole
           >
@@ -9,7 +9,7 @@
           <span class="menu-title">Dashboard</span>
         </a>
       </li>
-  @role('admin')
+    @role('admin')
         <li class="nav-item">
           <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
             <i class="icon-head menu-icon"></i>
@@ -37,6 +37,20 @@
               <li class="nav-item"> <a class="nav-link" href="/admin/history-pengembalian">Pengembalian </a></li>
             </ul>
           </div>
+        </li>
+    @endrole
+    @role('employee')
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+            <i class="icon-head menu-icon"></i>
+            <span class="menu-title">Master Data</span>
+            <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+            <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{{ route('admin.filing.index') }}"> Pemberkasan </a></li>
+            </ul>
+            </div>
         </li>
     @endrole
 

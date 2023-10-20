@@ -98,6 +98,7 @@
                                 <hr>
                             </div>
                         </div>
+
                         <div class="col-md-2">
                                 <div class="d-flex justify-content-end">
                                     <div class="">
@@ -107,30 +108,33 @@
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" readonly>
                                         @endif
                                     </div>
-                                    <div class="align-items-center">
-                                        @if (request('nip') != null)
-                                         <a href="{{ route('admin.filing.show',[request('nip'),$item->id]) }}"><i class="ti-eye text-primary p-2"></i></a>
+                                    @role('admin')
+                                        <div class="align-items-center">
+                                            @if (request('nip') != null)
+                                            <a href="{{ route('admin.filing.show',[request('nip'),$item->id]) }}"><i class="ti-eye text-primary p-2"></i></a>
 
-                                        @else
-                                            <a href="#"><i class="ti-eye text-primary p-2"></i></a>
-                                        @endif
-                                    </div>
-                                    <div class="align-items-center">
-                                        @if (request('nip') != null)
-                                            <a href="{{ route('admin.filing.upload-edit',[request('nip'),$item->id]) }}"><i class="ti-pencil text-warning p-2"></i></a>
+                                            @else
+                                                <a href="#"><i class="ti-eye text-primary p-2"></i></a>
+                                            @endif
+                                        </div>
+                                        <div class="align-items-center">
+                                            @if (request('nip') != null)
+                                                <a href="{{ route('admin.filing.upload-edit',[request('nip'),$item->id]) }}"><i class="ti-pencil text-warning p-2"></i></a>
 
-                                        @else
-                                            <a href="#"><i class="ti-pencil text-warning p-2"></i></a>
-                                        @endif
-                                    </div>
-                                    <div class="align-items-center">
-                                        @if (request('nip') != null)
-                                            <a href="{{ route('admin.filing.upload',[request('nip'),$item->id]) }}"><i class="ti-upload text-primary p-2"></i></a>
-                                        @else
-                                            <a href="#"><i class="ti-upload text-primary p-2"></i></a>
+                                            @else
+                                                <a href="#"><i class="ti-pencil text-warning p-2"></i></a>
+                                            @endif
+                                        </div>
+                                        <div class="align-items-center">
+                                            @if (request('nip') != null)
+                                                <a href="{{ route('admin.filing.upload',[request('nip'),$item->id]) }}"><i class="ti-upload text-primary p-2"></i></a>
+                                            @else
+                                                <a href="#"><i class="ti-upload text-primary p-2"></i></a>
 
-                                        @endif
-                                    </div>
+                                            @endif
+                                        </div>
+                                    @endrole
+
                                 </div>
                         </div>
                     @endforeach
