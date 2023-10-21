@@ -29,9 +29,9 @@
     </p>
     @enderror
 </div>
-<div class="form-group" name="work_unit" id="unit_kerja_div" style="display: none @error('work_unit') is-invalid @enderror">
+<div class="form-group"  id="unit_kerja_div" class="form-control @error('work_unit') is-invalid @enderror">
     <label>Unit Kerja</label>
-    <input type="text" class="form-control">
+    <input type="text" class="form-control " name="work_unit">
     @error('work_unit')
     <p class="text-danger">
      {{ $message }}

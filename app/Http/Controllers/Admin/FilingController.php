@@ -10,6 +10,7 @@ use App\Service\UserFileService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 
 class FilingController extends Controller
@@ -18,7 +19,8 @@ class FilingController extends Controller
         $user = User::select('id', 'nip')->where('nip','!=',null)->get();
         $data_user = null;
         $data_upload = null;
-        if ($request->has('nip')) {
+        if ($request->has('nip') || Session::has('nip')) {
+            Session::put('nip',$request->get('nip'));
             $data_user = User::where('id',$request->get('nip'))->first();
             $data_upload = UserFile::where('user_id',$request->get('nip'))->pluck('type_file_id')->toArray();
         }
@@ -70,7 +72,7 @@ class FilingController extends Controller
                 $typefile->save();
             }
         }
-        return redirect()->route('admin.filing.index')->withStatus('Berhasil menambahkan file.');
+        return redirect()->route('admin.filing.index',['nip'=>$_POST['id']])->withStatus('Berhasil menambahkan file.');
 
     }
 
@@ -104,7 +106,7 @@ class FilingController extends Controller
                 $typefile->update();
             }
         }
-        return redirect()->route('admin.filing.index')->withStatus('Berhasil mengganti file.');
+        return redirect()->route('admin.filing.index',['nip'=>$_POST['id']])->withStatus('Berhasil mengganti file.');
 
     }
 

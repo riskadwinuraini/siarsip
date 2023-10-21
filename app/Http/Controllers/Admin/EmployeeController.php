@@ -50,7 +50,7 @@ class EmployeeController extends Controller
             'type_pppk' => 'required',
             'gender' => 'required',
             'status' => 'required',
-            'no' => 'required'
+            'no' => 'required',
         ]);
 
         // Membuat user baru
