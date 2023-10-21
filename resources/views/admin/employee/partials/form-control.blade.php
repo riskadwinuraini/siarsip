@@ -29,7 +29,7 @@
     </p>
     @enderror
 </div>
-<div class="form-group"  id="unit_kerja_div" class="form-control @error('work_unit') is-invalid @enderror">
+<div class="form-group"  id="" class="form-control @error('work_unit') is-invalid @enderror">
     <label>Unit Kerja</label>
     <input type="text" class="form-control " name="work_unit">
     @error('work_unit')
