@@ -25,6 +25,7 @@ class DashboardController extends Controller
 
         $peminjaman =  FileLoan::where('status', 0)->get();
         $pengembalian = FileLoan::where('status', 1)->get();
+        
         return view('admin.dashboard',[
             'employees' => $employees,
             'count_user' => $count_user,

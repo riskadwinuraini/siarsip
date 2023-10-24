@@ -133,9 +133,6 @@
                               <th>
                                   Status
                               </th>
-                              <th>
-                                  Action
-                              </th>
                             </tr>
                           </thead>
                           <tbody>
@@ -147,13 +144,6 @@
                                   <td>{{ $employee->email }}</td>
                                   <td>{{ $employee->no }}</td>
                                   <td><span class="badge badge-primary">{{ $employee->status }}</span></td>
-                                  <td>
-                                    <form action="{{ route('admin.employee.destroy', $employee->id) }}" method="POST">
-                                      @csrf
-                                      @method('DELETE')
-                                      <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">Hapus</button>
-                                  </form>
-                                  </td>
                                 </tr>
                             @endforeach
                           </tbody>
@@ -232,9 +222,6 @@
                               <th>
                                 Jenis Berkas
                               </th>
-                              <th>
-                                  Terlampir
-                              </th>
 
                             </tr>
                           </thead>
@@ -243,15 +230,6 @@
                                 <tr>
                                   <td>{{ $loop->iteration }}</td>
                                   <td>{{ $item->name }}</td>
-                                  <td>
-                                    <a href="{{ route('admin.archive.edit', $item->id) }}" class="btn btn-info">Edit</a>
-                                    <form action="{{ route('admin.archive.destroy', $item->id) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-danger" type="submit">Hapus</button>
-                                        {{-- <a href="{{ route('admin.archive.destroy', $item->id) }}" class="btn btn-danger">Hapus</a> --}}
-                                    </form>
-                                  </td>
                                 </tr>
                             @endforeach
                           </tbody>
