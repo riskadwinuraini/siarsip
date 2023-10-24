@@ -42,9 +42,12 @@
                         </tbody>
                     </table>
                     <div class="p-4">
-                        <div class="embed-responsive embed-responsive-21by9">
-                            <iframe class="embed-responsive-item" src="{{ asset('/storage/file-upload/'.$typefile->file) }}"></iframe>
-                        </div>
+                        <embed
+                        src="{{ Storage::url('public/file-upload/'. $typefile->file)}}"
+                        type="application/pdf"
+                        width="100%"
+                        height="500px"
+                    />
                     </div>
                 </div>
                 <div class="card-footer">

@@ -121,7 +121,9 @@ class FilingController extends Controller
 
     function uploadFileShow($id, $id_file) {
         $data_user = User::where('id',$id)->first();
+        
         $typefile = UserFile::where('user_id',$id)->where('type_file_id',$id_file)->first();
+
         return view('admin.filing.show-data',[
             'data_user' => $data_user,
             'typefile' => $typefile
