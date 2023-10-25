@@ -28,6 +28,41 @@ class TypeFileSeeer extends Seeder
         [ 'code_file' => 'b0016', 'name' => 'Sertifikasi/kompetisi']
     ];
 
+
+    protected $filesPNS = [
+        ['code_file' => 'A001', 'name' => 'SK Kontrak', 'status' => 'PNS'],
+        ['code_file' => 'A002', 'name' => 'DRH', 'status' => 'PNS'],
+        ['code_file' => 'A003', 'name' => 'Model DK', 'status' => 'PNS'],
+        ['code_file' => 'A004', 'name' => 'SPMT', 'status' => 'PNS'],
+        ['code_file' => 'A005', 'name' => 'Ijazah dari awal sampai akhir', 'status' => 'PNS'],
+        ['code_file' => 'A006', 'name' => 'Petikan keputusan NIP baru', 'status' => 'PNS'],
+        ['code_file' => 'A007', 'name' => 'Keputusan tentang PNS', 'status' => 'PNS'],
+        ['code_file' => 'A008', 'name' => 'Taspen', 'status' => 'PNS'],
+        ['code_file' => 'A009', 'name' => 'Karpeg', 'status' => 'PNS'],
+        ['code_file' => 'A010', 'name' => 'SK Sumpah', 'status' => 'PNS'],
+        ['code_file' => 'A011', 'name' => 'Surat Izin Belajar', 'status' => 'PNS'],
+        ['code_file' => 'A012', 'name' => 'Sertif Pendidikan', 'status' => 'PNS'],
+        ['code_file' => 'A013', 'name' => 'Akta Nikah', 'status' => 'PNS'],
+        ['code_file' => 'A014', 'name' => 'Akta Anak', 'status' => 'PNS'],
+        ['code_file' => 'A015', 'name' => 'Karis/Karsu', 'status' => 'PNS'],
+        ['code_file' => 'A016', 'name' => 'KTP', 'status' => 'PNS'],
+        ['code_file' => 'A017', 'name' => 'Surat Kematian', 'status' => 'PNS'],
+        ['code_file' => 'A018', 'name' => 'Akte Cerai', 'status' => 'PNS'],
+        ['code_file' => 'A019', 'name' => 'Askes', 'status' => 'PNS'],
+        ['code_file' => 'A020', 'name' => 'NPWP', 'status' => 'PNS'],
+        ['code_file' => 'A021', 'name' => 'SK Tanda Kehormatan', 'status' => 'PNS'],
+        ['code_file' => 'A022', 'name' => 'SK Hukuman Disiplin', 'status' => 'PNS'],
+        ['code_file' => 'A023', 'name' => 'Keputusan Mutasi', 'status' => 'PNS'],
+        ['code_file' => 'A024', 'name' => 'Keputusan Bupati', 'status' => 'PNS'],
+        ['code_file' => 'A025', 'name' => 'Gaji Berkala', 'status' => 'PNS'],
+        ['code_file' => 'A026', 'name' => 'Keputusan Kenaikan Pangkat', 'status' => 'PNS'],
+        ['code_file' => 'A027', 'name' => 'DP3', 'status' => 'PNS'],
+        ['code_file' => 'A028', 'name' => 'SK Jabatan', 'status' => 'PNS'],
+        ['code_file' => 'A029', 'name' => 'STTPL', 'status' => 'PNS'],
+        ['code_file' => 'A030', 'name' => 'Penetapan Angka Kredit', 'status' => 'PNS'],
+        ['code_file' => 'A031', 'name' => 'SK Mutasi', 'status' => 'PNS'],
+        ['code_file' => 'A032', 'name' => 'Sertifikat/Kompetensi', 'status' => 'PNS']
+    ];
     /**
      * Run the database seeds.
      */
@@ -35,5 +70,6 @@ class TypeFileSeeer extends Seeder
     {
         
         foreach($this->files as $file) { TypeFile::create($file); }
+        foreach($this->filesPNS as $filePNS) { TypeFile::create($filePNS); }
     }
 }
