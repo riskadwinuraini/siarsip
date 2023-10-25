@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Support\Str;
 class FilingController extends Controller
 {
     public function index(Request $request) {
@@ -61,7 +61,12 @@ class FilingController extends Controller
                 }
                 $date = Carbon::now()->format('ymdhis');
                 $fileName = $key.$date.'.'.$file->extension();
-                $path = '/public/file-upload';
+
+                $type_file = TypeFile::where('id',$key)->first()->name;
+                $user = User::where('id',$_POST['id'])->first()->name;
+                $nama_file = Str::slug($type_file);
+                $user_name = Str::slug($user);
+                $path = '/public/'.$user_name.'/'.$nama_file.'/';
 
                 $storagePath = $file->storeAs($path, $fileName );
 
@@ -94,12 +99,17 @@ class FilingController extends Controller
                 if($file->extension() !== 'pdf') {
                     return redirect()->route('admin.filing.index')->withError('Format Harus PDF.');
                 }
-                $path = '/public/file-upload';
+                $type_file = TypeFile::where('id',$key)->first()->name;
+                $user = User::where('id',$_POST['id'])->first()->name;
+                $nama_file = Str::slug($type_file);
+                $user_name = Str::slug($user);
+                $path = '/public/'.$user_name.'/'.$nama_file.'/';
+
+                $typefile = UserFile::where('user_id',$_POST['id'])->where('type_file_id',$key)->first();
+                Storage::delete($path.$typefile->file);
 
                 $file->storeAs($path, $fileName);
 
-                $typefile = UserFile::where('user_id',$_POST['id'])->where('type_file_id',$key)->first();
-                Storage::delete('public/file-upload/'.$typefile->file);
                 $typefile->user_id = $_POST['id'];
                 $typefile->type_file_id = $key;
                 $typefile->file = $fileName;
