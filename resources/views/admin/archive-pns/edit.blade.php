@@ -8,7 +8,7 @@
                     <div class="card-title">
                         Form Jenis Berkas
                     </div>
-                    <form class="forms-sample" action="{{ route('admin.jenis-pppk.update', $archiveId->id) }}" method="POST">
+                    <form class="forms-sample" action="{{ route('admin.jenis-pns.update', $archiveId->id) }}" method="POST">
                         @csrf
                         @method('PUT')
                         @include('admin.archive.partials.form-control')

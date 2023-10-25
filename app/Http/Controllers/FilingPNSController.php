@@ -1,22 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\TypeFile;
 use App\Models\User;
 use App\Models\UserFile;
-use App\Service\UserFileService;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Storage;
 
-class FilingController extends Controller
+class FilingPNSController extends Controller
 {
     public function index(Request $request) {
-        $user = User::select('id', 'nip')->where('nip','!=',null)->where('type_pppk','p3k')->get();
+        $user = User::select('id', 'nip')->where('nip','!=',null)->where('type_pppk','pns')->get();
         $data_user = null;
         $data_upload = null;
         if ($request->has('nip') || Session::has('nip')) {
@@ -24,7 +19,7 @@ class FilingController extends Controller
             $data_user = User::where('id',$request->get('nip'))->first();
             $data_upload = UserFile::where('user_id',$request->get('nip'))->pluck('type_file_id')->toArray();
         }
-        $typefile = TypeFile::where('status','pppk')->get();
+        $typefile = TypeFile::where('status','pns')->get();
 
 
         return view('admin.filing.index',
@@ -129,7 +124,4 @@ class FilingController extends Controller
             'typefile' => $typefile
         ]);
     }
-
-
-
 }

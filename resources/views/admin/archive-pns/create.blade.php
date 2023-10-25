@@ -8,7 +8,7 @@
                     <div class="card-title">
                         Form Jenis Berkas
                     </div>
-                    <form class="forms-sample" action="{{ route('admin.jenis-pppk.store') }}" method="POST">
+                    <form class="forms-sample" action="{{ route('admin.jenis-pns.store') }}" method="POST">
                         @csrf
                         @include('admin.archive.partials.form-control')
                     </form>

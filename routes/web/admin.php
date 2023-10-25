@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\FileLoanController;
 use App\Http\Controllers\Admin\FilingController;
 use App\Http\Controllers\Admin\HistoryController;
 use App\Http\Controllers\ArchivePNSController;
+use App\Http\Controllers\FilingPNSController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -29,14 +30,30 @@ Route::get('history-pinjaman', [HistoryController::class, 'loanHistory'])->name(
 Route::get('/export/history-pinjaman', [HistoryController::class, 'exportPinjaman']);
 Route::get('history-pengembalian', [HistoryController::class, 'pengembalianHistory'])->name('loan.return.history');
 Route::get('/export/history-pengembalian', [HistoryController::class, 'exportPengembalian']);
+Route::prefix('pemberkasan')->group(function () {
 
-Route::get('pemberkasan', [FilingController::class, 'index'])->name('filing.index');
-// upload data
-Route::get('pemberkasan/upload-pemberkasan/{id}/{id_file}',[FilingController::class,'uploadFile'])->name('filing.upload');
-Route::post('process-create-document',[FilingController::class, 'proccessCreateDocument'])->name('proccessCreateDocument');
-Route::get('create-pemberkasan', [FilingController::class, 'create'])->name('filing.create');
-// Edit data
-Route::get('pemberkasan/edit-upload-pemberkasan/{id}/{id_file}',[FilingController::class,'uploadFileEdit'])->name('filing.upload-edit');
-Route::post('process-edit-document',[FilingController::class, 'proccessEditDocument'])->name('proccessEditDocument');
-// show data
-Route::get('pemberkasan/show-upload-pemberkasan/{id}/{id_file}',[FilingController::class,'uploadFileShow'])->name('filing.show');
+    Route::get('/', [FilingController::class, 'index'])->name('filing.index');
+    // upload data
+    Route::get('upload-pemberkasan/{id}/{id_file}',[FilingController::class,'uploadFile'])->name('filing.upload');
+    Route::post('process-create-document',[FilingController::class, 'proccessCreateDocument'])->name('proccessCreateDocument');
+    Route::get('create-pemberkasan', [FilingController::class, 'create'])->name('filing.create');
+    // Edit data
+    Route::get('edit-upload-pemberkasan/{id}/{id_file}',[FilingController::class,'uploadFileEdit'])->name('filing.upload-edit');
+    Route::post('process-edit-document',[FilingController::class, 'proccessEditDocument'])->name('proccessEditDocument');
+    // show data
+    Route::get('show-upload-pemberkasan/{id}/{id_file}',[FilingController::class,'uploadFileShow'])->name('filing.show');
+});
+
+Route::prefix('pemberkasan-pns')->group(function () {
+
+    Route::get('/', [FilingController::class, 'index'])->name('filing-pns.index');
+    // upload data
+    Route::get('upload-pemberkasan/{id}/{id_file}',[FilingPNSController::class,'uploadFile'])->name('filing-pns.upload');
+    Route::post('process-create-document',[FilingPNSController::class, 'proccessCreateDocument'])->name('filing-pns.proccessCreateDocument');
+    Route::get('create-pemberkasan', [FilingPNSController::class, 'create'])->name('filing-pns.create');
+    // Edit data
+    Route::get('edit-upload-pemberkasan/{id}/{id_file}',[FilingPNSController::class,'uploadFileEdit'])->name('filing-pns.upload-edit');
+    Route::post('process-edit-document',[FilingPNSController::class, 'proccessEditDocument'])->name('filing-pns.proccessEditDocument');
+    // show data
+    Route::get('show-upload-pemberkasan/{id}/{id_file}',[FilingPNSController::class,'uploadFileShow'])->name('filing-pns.show');
+});

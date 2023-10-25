@@ -12,8 +12,8 @@ class ArchivePNSController extends Controller
      */
     public function index()
     {
-        $typeFiles = TypeFile::where('status','pppk')->get();
-        return view('admin.archive.index', compact('typeFiles'));
+        $typeFiles = TypeFile::where('status','pns')->get();
+        return view('admin.archive-pns.index', compact('typeFiles'));
     }
 
     /**
@@ -22,7 +22,7 @@ class ArchivePNSController extends Controller
     public function create()
     {
 
-        return view('admin.archive.create');
+        return view('admin.archive-pns.create');
     }
 
     /**
@@ -36,7 +36,7 @@ class ArchivePNSController extends Controller
             'code_file' => 'required|string|max:255',
             // Sesuaikan dengan field dan aturan validasi yang sesuai
         ]);
-        $request->merge(["status"=>"pppk"]);
+        $request->merge(["status"=>"pns"]);
 
         $attr = $request->all();
         TypeFile::create($attr);
@@ -57,7 +57,7 @@ class ArchivePNSController extends Controller
      */
     public function edit(string $id)
     {
-        return view('admin.archive.edit', [
+        return view('admin.archive-pns.edit', [
             'archiveId' => TypeFile::find($id)
         ]);
     }
@@ -67,7 +67,7 @@ class ArchivePNSController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $request->merge(["status"=>"pppk"]);
+        $request->merge(["status"=>"pns"]);
         $typeFile = TypeFile::find($id);
         $typeFile->update($request->all());
 
@@ -83,9 +83,9 @@ class ArchivePNSController extends Controller
             $archive = TypeFile::findOrFail($id);
             $archive->delete();
 
-            return redirect()->route('admin.jenis-pppk.index')->with('success', 'Data berhasil dihapus.');
+            return redirect()->route('admin.jenis-pns.index')->with('success', 'Data berhasil dihapus.');
         } catch (\Exception $e) {
-            return redirect()->route('admin.jenis-pppk.index')->with('error', 'Gagal menghapus data: ' . $e->getMessage());
+            return redirect()->route('admin.jenis-pns.index')->with('error', 'Gagal menghapus data: ' . $e->getMessage());
         }
     }
 }

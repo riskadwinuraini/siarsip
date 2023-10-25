@@ -7,7 +7,7 @@
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title d-flex justify-content-between">
-                        <a href="{{ route('admin.jenis-pppk.create') }}" class="btn btn-primary">Tambah Berkas</a>
+                        <a href="{{ route('admin.jenis-pns.create') }}" class="btn btn-primary">Tambah Berkas</a>
                     </h4>
 
                     {{-- @include('admin.archive.modal') --}}
@@ -36,8 +36,8 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->name }}</td>
                                 <td>
-                                  <a href="{{ route('admin.jenis-pppk.edit', $item->id) }}" class="btn btn-info">Edit</a>
-                                  <form action="{{ route('admin.jenis-pppk.destroy', $item->id) }}" method="POST">
+                                  <a href="{{ route('admin.jenis-pns.edit', $item->id) }}" class="btn btn-info">Edit</a>
+                                  <form action="{{ route('admin.jenis-pns.destroy', $item->id) }}" method="POST">
                                       @csrf
                                       @method('DELETE')
                                       <button class="btn btn-danger" type="submit">Hapus</button>

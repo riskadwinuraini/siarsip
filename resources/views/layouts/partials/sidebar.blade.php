@@ -46,7 +46,7 @@
             </a>
             <div class="collapse" id="jenisBerkas">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{ route('admin.filing.index') }}"> PNS </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('admin.jenis-pns.index') }}"> PNS </a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ route('admin.jenis-pppk.index') }}"> PPPK </a></li>
 
               </ul>
