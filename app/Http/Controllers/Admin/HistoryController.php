@@ -22,11 +22,11 @@ class HistoryController extends Controller
         if ($request->has('filter')) {
             Session::put('filter',$request->get('filter'));
             if ($request->get('filter') == 'minggu-ini') {
-                $loanHistories = $query->whereBetween('created_at',[Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->get();
+                $loanHistories = $query->whereBetween('loan_date',[Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->get();
             } elseif ($request->get('filter') == 'bulan-ini') {
-                $loanHistories = $query->whereMonth('created_at', '=', $month)->get();
+                $loanHistories = $query->whereMonth('loan_date', '=', $month)->get();
             } else {
-                $loanHistories = $query->whereYear('created_at', '=', $year)->get();
+                $loanHistories = $query->whereYear('loan_date', '=', $year)->get();
             }
         }
         else{
@@ -43,11 +43,11 @@ class HistoryController extends Controller
         if ($request->has('filter')) {
             Session::put('filter',$request->get('filter'));
             if ($request->get('filter') == 'minggu-ini') {
-                $loanHistories = $query->whereBetween('created_at',[Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->get();
+                $loanHistories = $query->whereBetween('return_date',[Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->get();
             } elseif ($request->get('filter') == 'bulan-ini') {
-                $loanHistories = $query->whereMonth('created_at', '=', $month)->get();
+                $loanHistories = $query->whereMonth('return_date', '=', $month)->get();
             } else {
-                $loanHistories = $query->whereYear('created_at', '=', $year)->get();
+                $loanHistories = $query->whereYear('return_date', '=', $year)->get();
             }
         }
         else{

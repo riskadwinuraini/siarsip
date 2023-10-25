@@ -46,7 +46,7 @@ Route::prefix('pemberkasan')->group(function () {
 
 Route::prefix('pemberkasan-pns')->group(function () {
 
-    Route::get('/', [FilingController::class, 'index'])->name('filing-pns.index');
+    Route::get('/', [FilingPNSController::class, 'index'])->name('filing-pns.index');
     // upload data
     Route::get('upload-pemberkasan/{id}/{id_file}',[FilingPNSController::class,'uploadFile'])->name('filing-pns.upload');
     Route::post('process-create-document',[FilingPNSController::class, 'proccessCreateDocument'])->name('filing-pns.proccessCreateDocument');

@@ -52,7 +52,7 @@
                 </div>
                 <div class="card-footer">
 
-                    <a href="{{ route('admin.filing.index') }}" class="btn btn-light">Cancel</a>
+                    <a href="{{ route('admin.filing-pns.index') }}" class="btn btn-light">Cancel</a>
                 </div>
             </div>
         </div>

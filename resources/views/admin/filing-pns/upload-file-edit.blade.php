@@ -166,7 +166,7 @@
                     <div class="card-title">
                         Upload File
                     </div>
-                    <form class="forms-sample" action="{{ route('admin.proccessEditDocument') }}" method="POST" enctype="multipart/form-data">
+                    <form class="forms-sample" action="{{ route('admin.filing-pns.proccessEditDocument') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="text" hidden name="id" value="{{ $data_user->id }}">
                         <div class="file-upload">

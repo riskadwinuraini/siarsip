@@ -44,7 +44,7 @@
                 </div> --}}
                 <div class="row">
                     <div class="col-md-10">
-                        <form action="{{ route('admin.filing.index') }}" method="GET">
+                        <form action="{{ route('admin.filing-pns.index') }}" method="GET">
                         <div class="form-group">
                             <label class="fw-bold">Search NIP</label>
                             <select name="nip" class="form-control" id="nip">
@@ -111,7 +111,7 @@
                                     @role('admin')
                                         <div class="align-items-center">
                                             @if (request('nip') != null)
-                                            <a href="{{ route('admin.filing.show',[request('nip'),$item->id]) }}"><i class="ti-eye text-primary p-2"></i></a>
+                                            <a href="{{ route('admin.filing-pns.show',[request('nip'),$item->id]) }}"><i class="ti-eye text-primary p-2"></i></a>
 
                                             @else
                                                 <a href="#"><i class="ti-eye text-primary p-2"></i></a>
@@ -119,7 +119,7 @@
                                         </div>
                                         <div class="align-items-center">
                                             @if (request('nip') != null)
-                                                <a href="{{ route('admin.filing.upload-edit',[request('nip'),$item->id]) }}"><i class="ti-pencil text-warning p-2"></i></a>
+                                                <a href="{{ route('admin.filing-pns.upload-edit',[request('nip'),$item->id]) }}"><i class="ti-pencil text-warning p-2"></i></a>
 
                                             @else
                                                 <a href="#"><i class="ti-pencil text-warning p-2"></i></a>
@@ -127,7 +127,7 @@
                                         </div>
                                         <div class="align-items-center">
                                             @if (request('nip') != null)
-                                                <a href="{{ route('admin.filing.upload',[request('nip'),$item->id]) }}"><i class="ti-upload text-primary p-2"></i></a>
+                                                <a href="{{ route('admin.filing-pns.upload',[request('nip'),$item->id]) }}"><i class="ti-upload text-primary p-2"></i></a>
                                             @else
                                                 <a href="#"><i class="ti-upload text-primary p-2"></i></a>
 

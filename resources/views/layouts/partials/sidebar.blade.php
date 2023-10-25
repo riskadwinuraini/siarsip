@@ -32,7 +32,7 @@
             </a>
             <div class="collapse" id="pemberkasan">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{ route('admin.filing.index') }}"> PNS </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('admin.filing-pns.index') }}"> PNS </a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ route('admin.filing.index') }}"> PPPK </a></li>
 
               </ul>

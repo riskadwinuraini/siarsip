@@ -19,7 +19,7 @@
                     <div class="card-title">
                         Form pemberkasan
                     </div>
-                    <form class="forms-sample" action="{{ route('admin.proccessCreateDocument') }}" method="POST" enctype="multipart/form-data">
+                    <form class="forms-sample" action="{{ route('admin.filing-pns.proccessCreateDocument') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @include('admin.filing.partials.form-control')
                     </form>

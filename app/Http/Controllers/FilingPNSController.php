@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\TypeFile;
 use App\Models\User;
 use App\Models\UserFile;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 
 class FilingPNSController extends Controller
 {
@@ -22,7 +24,7 @@ class FilingPNSController extends Controller
         $typefile = TypeFile::where('status','pns')->get();
 
 
-        return view('admin.filing.index',
+        return view('admin.filing-pns.index',
         [
             'typefile' => $typefile,
             'users' => $user,
@@ -36,7 +38,7 @@ class FilingPNSController extends Controller
         $typefile = TypeFile::all();
         $user = User::select('id', 'nip')->get();
 
-        return view('admin.filing.create', [
+        return view('admin.filing-pns.create', [
             'typefile' => $typefile,
             'users' => $user
         ]);
@@ -67,14 +69,14 @@ class FilingPNSController extends Controller
                 $typefile->save();
             }
         }
-        return redirect()->route('admin.filing.index',['nip'=>$_POST['id']])->withStatus('Berhasil menambahkan file.');
+        return redirect()->route('admin.filing-pns.index',['nip'=>$_POST['id']])->withStatus('Berhasil menambahkan file.');
 
     }
 
     function uploadFile($id, $id_file) {
         $data_user = User::where('id',$id)->first();
 
-        return view('admin.filing.upload-file',[
+        return view('admin.filing-pns.upload-file',[
             'data_user' => $data_user,
             'id_file' => $id_file
         ]);
@@ -87,7 +89,7 @@ class FilingPNSController extends Controller
                 $date = Carbon::now()->format('ymdhis');
                 $fileName = $key.$date.'.'.$file->extension();
                 if($file->extension() !== 'pdf') {
-                    return redirect()->route('admin.filing.index')->withError('Format Harus PDF.');
+                    return redirect()->route('admin.filing-pns.index')->withError('Format Harus PDF.');
                 }
                 $path = '/public/file-upload';
 
@@ -101,14 +103,14 @@ class FilingPNSController extends Controller
                 $typefile->update();
             }
         }
-        return redirect()->route('admin.filing.index',['nip'=>$_POST['id']])->withStatus('Berhasil mengganti file.');
+        return redirect()->route('admin.filing-pns.index',['nip'=>$_POST['id']])->withStatus('Berhasil mengganti file.');
 
     }
 
     function uploadFileEdit($id, $id_file) {
         $data_user = User::where('id',$id)->first();
 
-        return view('admin.filing.upload-file-edit',[
+        return view('admin.filing-pns.upload-file-edit',[
             'data_user' => $data_user,
             'id_file' => $id_file
         ]);
@@ -119,7 +121,7 @@ class FilingPNSController extends Controller
 
         $typefile = UserFile::where('user_id',$id)->where('type_file_id',$id_file)->first();
 
-        return view('admin.filing.show-data',[
+        return view('admin.filing-pns.show-data',[
             'data_user' => $data_user,
             'typefile' => $typefile
         ]);
