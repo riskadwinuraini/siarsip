@@ -18,7 +18,7 @@
 </div>
 <div class="form-group">
     <label>Jenis Pegawai</label>
-    <select name="type_pegawai" id="jenis_pegawai" class="form-control @error('type_pegawai') is-invalid @enderror">
+    <select name="type_pppk" id="jenis_pppk" class="form-control @error('type_pppk') is-invalid @enderror">
         <option value="">Pilih</option>
         <option value="pns">PNS</option>
         <option value="p3k">P3K</option>
