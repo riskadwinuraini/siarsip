@@ -18,6 +18,8 @@ Route::prefix('jenis-berkas')->group(function () {
     // jenis pns
     Route::resource('jenis-pns', ArchivePNSController::class);
 });
+Route::post('employee/upload-pegawai-p3k', [EmployeeController::class,'uploadPPPK'])->name('admin.employee-pppk');
+Route::post('employee/upload-pegawai-pns', [EmployeeController::class,'uploadPNS'])->name('admin.employee-pns');
 Route::resource('employee', EmployeeController::class);
 Route::resource('cupboard', CupboardController::class);
 

@@ -5,8 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Imports\UsersPNSImport;
+use App\Imports\UsersPPPKImport;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Maatwebsite\Excel\Facades\Excel;
 use Spatie\Permission\Models\Role;
 
 class EmployeeController extends Controller
@@ -17,15 +20,17 @@ class EmployeeController extends Controller
     public function index()
     {
         // Cari peran "employee"
-        $employeeRole = Role::where('name', 'employee')->first();
+        // $employeeRole = Role::where('name', 'employee')->first();
 
-        if ($employeeRole) {
-            // Dapatkan pengguna yang memiliki peran "employee"
-            $employees = $employeeRole->users;
+        // if ($employeeRole) {
+        //     // Dapatkan pengguna yang memiliki peran "employee"
+        //     $employees = $employeeRole->users;
 
-            // Kirim data pengguna dengan peran "employee" ke tampilan
-            return view('admin.employee.index', ['employees' => $employees]);
-        }
+        //     // Kirim data pengguna dengan peran "employee" ke tampilan
+        //     return view('admin.employee.index', ['employees' => $employees]);
+        // }
+        $employees = User::latest()->paginate(10);
+        return view('admin.employee.index', ['employees' => $employees]);
     }
 
     /**
@@ -103,5 +108,19 @@ class EmployeeController extends Controller
         } else {
             return redirect()->route('admin.employee.index')->with('error', 'Pengguna tidak memiliki peran "employee".');
         }
+    }
+
+    function uploadPPPK(Request $request) {
+        ini_set('max_execution_time', 300);
+        Excel::import(new UsersPPPKImport, $request->file('users'));
+        return redirect()->route('admin.employee.index')->with('success', 'Pengguna berhasil diupload.');
+
+        // return User::latest()->get();
+    }
+
+    function uploadPNS(Request $request) {
+        ini_set('max_execution_time', 300);
+        Excel::import(new UsersPNSImport, $request->file('users_pns'));
+        return redirect()->route('admin.employee.index')->with('success', 'Pengguna berhasil diupload.');
     }
 }
