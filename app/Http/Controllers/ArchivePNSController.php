@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\TypeFile;
 use Illuminate\Http\Request;
 
-class ArchiveController extends Controller
+class ArchivePNSController extends Controller
 {
-    /**
+   /**
      * Display a listing of the resource.
      */
     public function index()

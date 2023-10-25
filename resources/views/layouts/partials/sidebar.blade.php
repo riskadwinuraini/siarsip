@@ -18,12 +18,39 @@
           </a>
           <div class="collapse" id="auth">
             <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="{{ route('admin.filing.index') }}"> Pemberkasan </a></li>
-              <li class="nav-item"> <a class="nav-link" href="{{ route('admin.archive.index') }}"> Jenis Berkas </a></li>
               <li class="nav-item"> <a class="nav-link" href="{{ route('admin.loan.index') }}"> Transaksi </a></li>
               <li class="nav-item"> <a class="nav-link" href="{{ route('admin.employee.index') }}"> User </a></li>
+
             </ul>
           </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#pemberkasan" aria-expanded="false" aria-controls="pemberkasan">
+              <i class="icon-paper menu-icon"></i>
+              <span class="menu-title">Pemberkasan</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="pemberkasan">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{{ route('admin.filing.index') }}"> PNS </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('admin.filing.index') }}"> PPPK </a></li>
+
+              </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#jenisBerkas" aria-expanded="false" aria-controls="jenisBerkas">
+              <i class="icon-folder menu-icon"></i>
+              <span class="menu-title">Jenis Berkas</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="jenisBerkas">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{{ route('admin.filing.index') }}"> PNS </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('admin.jenis-pppk.index') }}"> PPPK </a></li>
+
+              </ul>
+            </div>
         </li>
         <li class="nav-item">
           <a class="nav-link" data-toggle="collapse" href="#history" aria-expanded="false" aria-controls="history">

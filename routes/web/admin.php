@@ -7,10 +7,16 @@ use App\Http\Controllers\Admin\CupboardController;
 use App\Http\Controllers\Admin\FileLoanController;
 use App\Http\Controllers\Admin\FilingController;
 use App\Http\Controllers\Admin\HistoryController;
+use App\Http\Controllers\ArchivePNSController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::resource('archive', ArchiveController::class);
+Route::prefix('jenis-berkas')->group(function () {
+    // jenis pppk
+    Route::resource('jenis-pppk', ArchiveController::class);
+    // jenis pns
+    Route::resource('jenis-pns', ArchivePNSController::class);
+});
 Route::resource('employee', EmployeeController::class);
 Route::resource('cupboard', CupboardController::class);
 
