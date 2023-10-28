@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\FileLoan;
 use App\Models\TypeFile;
+use App\Models\UserFile;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 

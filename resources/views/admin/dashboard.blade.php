@@ -75,7 +75,7 @@
                 <div class="card card-dark-blue">
                     <div class="card-body">
                         <p class="mb-4">Berkas masuk</p>
-                        <p class="fs-30 mb-2">61344</p>
+                        <p class="fs-30 mb-2">{{ $peminjaman->count(); }}</p>
                         <p>2023-2028</p>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                 <div class="card card-light-blue">
                 <div class="card-body">
                     <p class="mb-4">Berkas keluar</p>
-                    <p class="fs-30 mb-2">34040</p>
+                    <p class="fs-30 mb-2">{{ $pengembalian->count() }}</p>
                     <p>2023-2028</p>
                 </div>
                 </div>

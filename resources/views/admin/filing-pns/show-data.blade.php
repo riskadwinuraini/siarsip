@@ -42,12 +42,12 @@
                         </tbody>
                     </table>
                     <div class="p-4">
-                        <embed
                         @php
                             $file = \App\Models\TypeFile::where('id',$typefile->type_file_id)->first()->name;
-                            $path = \Illuminate\Support\Str::slug($data_user->name).'/'.\Illuminate\Support\Str::slug($file).'/';
+                            $path = \Str::slug($data_user->name).'/'.\Str::slug($file).'/';
                         @endphp
-                        src="{{ Storage::url($path.$typefile->file)}}"
+                        <embed
+                        src="{{ Storage::url('/public/'.$path.$typefile->file)}}"
                         type="application/pdf"
                         width="100%"
                         height="500px"

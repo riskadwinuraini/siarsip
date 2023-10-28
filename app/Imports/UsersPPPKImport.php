@@ -17,7 +17,7 @@ class UsersPPPKImport implements ToModel, WithBatchInserts, WithChunkReading
     */
     public function model(array $row)
     {
-        return new User([
+        $data = [
             'nip' => $row[0],
             'name' => $row[1],
             'gender' => $row[2],
@@ -27,7 +27,9 @@ class UsersPPPKImport implements ToModel, WithBatchInserts, WithChunkReading
             'email' => $row[6] ,
             'password' => Hash::make('password'),
             'status' => 'aktif',
-        ]);
+        ];
+
+        return new User($data);
     }
 
     /**
