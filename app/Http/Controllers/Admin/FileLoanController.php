@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\FileLoan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Spatie\Permission\Models\Role;
 
 class FileLoanController extends Controller
@@ -33,7 +34,7 @@ class FileLoanController extends Controller
         }
 
         // Temukan semua pengguna dengan peran "employee"
-        $employees = $employeeRole->users;
+        $employees = User::select('id', 'nip')->where('nip','!=',null)->get();
 
         return view('admin.loan.create', compact('employees'));
     }
