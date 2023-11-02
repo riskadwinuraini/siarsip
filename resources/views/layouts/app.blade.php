@@ -19,6 +19,8 @@
         <link rel="stylesheet" href="/assets/css/vertical-layout-light/style.css">
         <!-- endinject -->
         <link rel="shortcut icon" href="/assets/images/favicon.png" />
+
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
         @stack('style')
     </head>
     <body class="container-scroller">
@@ -59,6 +61,8 @@
     <script src="/assets/js/file-upload.js"></script>
     <script src="/assets/vendors/select2/select2.min.js"></script>
     <script src="/assets/js/select2.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     @stack('scripts')
 
     

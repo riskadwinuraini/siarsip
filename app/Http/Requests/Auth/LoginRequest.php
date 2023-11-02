@@ -32,6 +32,14 @@ class LoginRequest extends FormRequest
         ];
     }
 
+    public function messages(): array
+    {
+        return [
+            'email.required' => 'Email harus diisi',
+            'email.email' => 'Kredensial ini tidak cocok dengan ketentuan kami.',
+            'password.required' => 'Password harus diisi'
+        ];
+    }
     /**
      * Attempt to authenticate the request's credentials.
      *
