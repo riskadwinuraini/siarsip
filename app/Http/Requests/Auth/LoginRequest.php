@@ -38,6 +38,7 @@ class LoginRequest extends FormRequest
             'email.required' => 'Email harus diisi',
             'email.email' => 'Kredensial ini tidak cocok dengan ketentuan kami.',
             'password.required' => 'Password harus diisi'
+            
         ];
     }
     /**
@@ -54,6 +55,7 @@ class LoginRequest extends FormRequest
 
             throw ValidationException::withMessages([
                 'email' => trans('auth.failed'),
+                'password' => ['Kata sandi salah']
             ]);
         }
 
