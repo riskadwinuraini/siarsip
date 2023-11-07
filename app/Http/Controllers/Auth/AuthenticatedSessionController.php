@@ -29,7 +29,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return to_route($this->redirectToRoute());
+        return to_route($this->redirectToRoute())->with('message', 'Berhasil Login');
     }
 
     private function redirectToRoute()
@@ -37,8 +37,6 @@ class AuthenticatedSessionController extends Controller
         $user = Auth::user();
         if ($user->hasRole('admin')) {
             return 'admin.dashboard';
-        }elseif ($user->hasRole('employee')) {
-            return 'employee.dashboard';
         }else{
             return back();
         }

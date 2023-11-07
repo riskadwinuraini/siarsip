@@ -11,6 +11,14 @@
 @endpush
 @push('scripts')
     <script>
+       @if(Session::has('message'))
+            toastr.options =
+            {
+                "closeButton" : true,
+                "progressBar" : true
+            }
+                    toastr.success("{{ session('message') }}");
+        @endif 
         $(document).ready(function() {
             $('#pegawai').on('click', function(e) {
                 e.preventDefault(); // Menghentikan aksi default (navigasi ke href)

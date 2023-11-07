@@ -1,4 +1,14 @@
 @extends('layouts.app')
+@push('scripts')
+<link href="vendor/select2/dist/css/select2.min.css" rel="stylesheet" />
+<script src="vendor/select2/dist/js/select2.min.js"></script>
+
+<script>
+    $(function(){
+        $('#user_id').select2();
+    })
+</script>
+@endpush
 @section('content')
 <div class="row">
     <div class="col-lg-6 grid-margin stretch-card">
@@ -59,7 +69,7 @@
 
             var id = $(this).val();
             $.ajax({
-                url: "{{ route('admin.user.fetch', ':id') }}".replace(':id', id), 
+                url: "{{ route('admin.user.fetch', ':id') }}".replace(':id', id),
                 dataType: 'json',
                 type: 'GET',
                 success: function(response){
@@ -69,9 +79,9 @@
                 }
             });
 
-           
+
         })
-        
+
 
         var jumlahHari = $('#jumlahHari');
 
