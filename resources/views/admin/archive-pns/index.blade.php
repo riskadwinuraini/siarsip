@@ -6,6 +6,7 @@
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
+                    <h4 class="card-title">Jenis Berkas PNS</h4>
                     <h4 class="card-title d-flex justify-content-between">
                         <a href="{{ route('admin.jenis-pns.create') }}" class="btn btn-primary">Tambah Berkas</a>
                     </h4>
