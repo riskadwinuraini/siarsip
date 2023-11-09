@@ -55,7 +55,7 @@
     <div class="container text-center text-md-left" data-aos="fade-up">
       <h1>Selamat Datang di SI ARSIP </h1>
       <h2>Sistem Informasi Management Arsip BKPSDM Kab. Bondowoso</h2>
-      <a href="{{ route('login')}}" class="btn-get-started scrollto">Login</a>
+      <a href="{{ route('login')}}" class="btn-get-started scrollto">MASUK</a>
     </div>
   </section><!-- End Hero -->
 
@@ -71,10 +71,10 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>Tentang kami</h3>
             <p>
-              Jl. KH Ashari No. 123, Blk. Timur, Kademangan <br>
-              Kec. Bondowoso, kab.Bondowoso<br>
-              Jawa Timur, 68217 <br><br>
-              <strong>Telepon:</strong> (0332) 429 584<br>
+              Jl. KH Ashari No. 123 Blk. Timur, Kademangan <br>
+              Kec. Bondowoso Kab. Bondowoso<br>
+              Jawa Timur, Kode Pos: 68217 <br><br>
+              <strong>Telepon:</strong> (0332) 429584<br>
               <strong>Email:</strong> admin@bkpsdm.bondowosokab.go.id<br>
               <strong>Website:</strong> http://bkpsdm.bondowosokab.go.id<br>
             </p>
