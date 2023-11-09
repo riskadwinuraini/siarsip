@@ -187,10 +187,10 @@
                         </div>
                 </div>
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button type="submit" class="btn btn-primary mr-2">Simpan</button>
                     </form>
 
-                    <a href="{{ route('admin.employee.index') }}" class="btn btn-light">Cancel</a>
+                    <a href="{{ route('admin.employee.index') }}" class="btn btn-light">Kembali</a>
                 </div>
             </div>
         </div>

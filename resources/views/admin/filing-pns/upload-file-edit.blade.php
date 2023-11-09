@@ -164,7 +164,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-title">
-                        Upload File
+                        Unggah Berkas
                     </div>
                     <form class="forms-sample" action="{{ route('admin.filing-pns.proccessEditDocument') }}" method="POST" enctype="multipart/form-data">
                         @csrf
@@ -175,7 +175,7 @@
                             <div class="image-upload-wrap">
                                 <input class="file-upload-input" name="{{ $id_file }}" type='file' onchange="readURL(this);" />
                                 <div class="drag-text">
-                                <h3>Drag and drop a file or select File</h3>
+                                <h3>Seret dan lepas file atau pilih File PDF</h3>
                                 </div>
                             </div>
                             <div class="file-upload-content">
@@ -187,10 +187,10 @@
                         </div>
                 </div>
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button type="submit" class="btn btn-primary mr-2">Simpan</button>
                     </form>
 
-                    <a href="{{ route('admin.employee.index') }}" class="btn btn-light">Cancel</a>
+                    <a href="{{ route('admin.employee.index') }}" class="btn btn-light">Kembali</a>
                 </div>
             </div>
         </div>

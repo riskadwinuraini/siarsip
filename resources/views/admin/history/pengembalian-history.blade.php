@@ -5,10 +5,10 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Riwayat Pengembalian</h4>
+                <h4 class="card-title">History Pengembalian</h4>
                 <div class="d-flex justify-content-between">
                     <div class="" style="width: 200px">
-                        <a href="export/history-pengembalian" class="btn btn-primary">Export to Excel</a>
+                        <a href="export/history-pengembalian" class="btn btn-primary">Unduh Data Excel</a>
                     </div>
                     <div c;a>
                         <div class="row">
