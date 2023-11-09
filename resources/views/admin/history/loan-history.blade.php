@@ -6,10 +6,11 @@
 </div>
 <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
-        <div class="card">
+            <div class="card">
             <div class="card-header">
                 <div class="d-flex justify-content-between">
                     <div class="" style="width: 200px">
+                        <h4 class="card-title">Riwayat Peminjaman</h4>
                         <a href="export/history-pinjaman" class="btn btn-primary">Export to Excel</a>
                     </div>
                     <div c;a>

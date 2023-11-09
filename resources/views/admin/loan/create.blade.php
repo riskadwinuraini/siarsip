@@ -22,7 +22,7 @@
                     <div class="form-group">
                         <label>Nip</label>
                         <select name="user_id" class="form-control" id="user_id">
-                            <option value="0">Pilih Nip</option>
+                            <option value="0">Pilih NIP</option>
                             @foreach ($employees as $employee)
                                 <option value="{{ $employee->id }}">{{ $employee->nip }}</option>
                             @endforeach

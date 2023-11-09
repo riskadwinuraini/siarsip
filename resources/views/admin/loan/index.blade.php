@@ -9,7 +9,7 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Data kembali arsip</h4>
+            <h4 class="card-title">Data Transaksi</h4>
             <div class="card-description">
                 <a href="{{ route('admin.loan.create') }}" class="btn btn-primary">Tambah Pinjaman Baru</a>
             </div>

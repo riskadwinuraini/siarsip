@@ -4,7 +4,7 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Data Arsip</h4>
+            <h4 class="card-title">Data User</h4>
             <div class="card-description">
                 <div class="row">
                     <div class="col-md-6">
