@@ -38,7 +38,7 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Data Pemberkasan</h4>
+                <h4 class="card-title">Data Pemberkasan PNS</h4>
                 {{-- <div class="card-description">
                     <a href="{{ route('admin.filing.create') }}" class="btn btn-primary">Tambah Pemberkasan Baru</a>
                 </div> --}}

@@ -54,7 +54,7 @@
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="container text-center text-md-left" data-aos="fade-up">
       <h1>Selamat Datang di SI ARSIP </h1>
-      <h2>Sistem Informasi Management Arsip BKPSDM Kab.Bondowoso</h2>
+      <h2>Sistem Informasi Management Arsip BKPSDM Kab. Bondowoso</h2>
       <a href="{{ route('login')}}" class="btn-get-started scrollto">Login</a>
     </div>
   </section><!-- End Hero -->
@@ -71,12 +71,12 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>Tentang kami</h3>
             <p>
-              Jl. KH Ashari No.123, Blk.Timur, Kademangan <br>
+              Jl. KH Ashari No. 123, Blk. Timur, Kademangan <br>
               Kec. Bondowoso, kab.Bondowoso<br>
               Jawa Timur, 68217 <br><br>
-              <strong>Phone:</strong> (0332) 429 584<br>
+              <strong>Telepon:</strong> (0332) 429 584<br>
               <strong>Email:</strong> admin@bkpsdm.bondowosokab.go.id<br>
-              <strong>website:</strong> http://bkpsdm.bondowosokab.go.id<br>
+              <strong>Website:</strong> http://bkpsdm.bondowosokab.go.id<br>
             </p>
           </div>
 
@@ -93,11 +93,10 @@
         
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://twitter.com/bkd_bondowoso" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="https://www.facebook.com/BKDBWS/" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/bkpsdmbondowoso/" class="instagram"><i class="bx bxl-instagram"></i></a>
+
       </div>
     </div>
   </footer><!-- End Footer -->
