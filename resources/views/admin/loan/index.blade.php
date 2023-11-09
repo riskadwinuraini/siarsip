@@ -11,7 +11,7 @@
           <div class="card-body">
             <h4 class="card-title">Data Transaksi</h4>
             <div class="card-description">
-                <a href="{{ route('admin.loan.create') }}" class="btn btn-primary">Tambah Pinjaman Baru</a>
+                <a href="{{ route('admin.loan.create') }}" class="btn btn-primary">Tambah Transaksi Baru</a>
             </div>
             <div class="table-responsive">
               <table class="table table-striped">

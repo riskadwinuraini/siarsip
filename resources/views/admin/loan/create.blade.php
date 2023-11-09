@@ -33,7 +33,7 @@
                         <input type="text" id="nama" readonly class="form-control">
                     </div>
                     <div class="form-group">
-                        <label>No Handphone</label>
+                        <label>No. Handphone</label>
                         <input type="text" id="no" readonly class="form-control">
                     </div>
                     <div class="form-group">
@@ -51,7 +51,7 @@
                         <label>Tanggal Pengembalian</label>
                         <input type="date" name="return_date" id="tanggalPengembalian" readonly class="form-control">
                     </div>
-                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button type="submit" class="btn btn-primary mr-2">Simpan</button>
                 </form>
             </div>
         </div>

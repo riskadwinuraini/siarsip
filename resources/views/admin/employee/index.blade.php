@@ -12,11 +12,11 @@
                             @csrf
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <label for="users">Upload Pegawai P3K</label>
+                                    <label for="users">Unggah Pegawai PPPK</label>
                                     <input type="file" class="form-control" style="padding: 3px;" name="users" required />
                                 </div>
                                 <div class="col-md-6 align-self-center mt-4">
-                                    <button type="submit" class="btn btn-success w-50" name="upload">Upload</button>
+                                    <button type="submit" class="btn btn-success w-50" name="upload">Unggah</button>
                                 </div>
                             </div>
                         </form>
@@ -27,11 +27,11 @@
                             @csrf
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <label for="users">Upload Pegawai PNS</label>
+                                    <label for="users">Unggah Pegawai PNS</label>
                                     <input type="file" class="form-control" style="padding: 3px;" name="users_pns" required />
                                 </div>
                                 <div class="col-md-6 align-self-center">
-                                    <button type="submit" class="btn btn-success w-50" name="upload">Upload</button>
+                                    <button type="submit" class="btn btn-success w-50" name="upload">Unggah</button>
                                 </div>
                             </div>
                         </form>
@@ -50,13 +50,16 @@
                         NIP
                     </th>
                     <th>
-                      Jenis Kelamin
+                      JK
                     </th>
                     <th>
                       Email
                     </th>
                     <th>
-                      No.Hp
+                      No. Hp
+                    </th>
+                    <th>
+                      Jenis User
                     </th>
                     <th>
                         Status
@@ -74,6 +77,7 @@
                         <td>{{ $employee->gender }}</td>
                         <td>{{ $employee->email }}</td>
                         <td>{{ $employee->no }}</td>
+                        <td>{{ $employee->type_pegawai }}</td>
                         <td>{{ $employee->status }}</td>
                         <td>
                           <form action="{{ route('admin.employee.destroy', $employee->id) }}" method="POST">

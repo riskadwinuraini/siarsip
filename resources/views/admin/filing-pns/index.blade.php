@@ -46,9 +46,9 @@
                     <div class="col-md-10">
                         <form action="{{ route('admin.filing-pns.index') }}" method="GET">
                         <div class="form-group">
-                            <label class="fw-bold">Search NIP</label>
+                            <label class="fw-bold">Cari NIP</label>
                             <select name="nip" class="form-control" id="nip">
-                                <option value="">Selected Option</option>
+                                <option value="">Pilih NIP</option>
                                 @foreach ($users as $user)
                                     <option value="{{ $user->id }}" {{ request('nip') == $user->id ? 'selected' : '' }}>{{ $user->nip }}</option>
                                 @endforeach
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                     <div class="col-md-2 align-self-center">
-                        <button class="btn btn-primary w-100">Search</button>
+                        <button class="btn btn-primary w-100">Cari</button>
                     </form>
                     </div>
                 </div>
