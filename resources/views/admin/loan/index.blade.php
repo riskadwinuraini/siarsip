@@ -17,10 +17,10 @@
               <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th>User</th>
+                    <th>Nama User</th>
                     <th>Keterangan</th>
                     <th>Tanggal Pinjam</th>
-                    <th>Tanggal Pengembalian</th>
+                    <th>Tanggal Kembali</th>
                     <th>Status</th>
                   </tr>
                 </thead>

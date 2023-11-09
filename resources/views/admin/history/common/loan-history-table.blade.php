@@ -3,7 +3,7 @@
         <tr>
         <th>Nama Peminjam</th>
         <th>Tanggal Pinjam</th>
-        <th>Tanggal Pengembalian</th>
+        <th>Tanggal Kembali</th>
         </tr>
     </thead>
     <tbody>

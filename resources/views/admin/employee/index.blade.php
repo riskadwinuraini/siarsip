@@ -5,15 +5,15 @@
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">Data User</h4>
-            <div class="card-description">
+             <div class="card-description">
                 <div class="row">
                     <div class="col-md-6">
                         <form action="{{ route('admin.admin.employee-pppk') }}" enctype="multipart/form-data" method="POST">
                             @csrf
-                            <div class="row">
+                              <div class="row">
                                 <div class="col-lg-6">
                                     <label for="users">Unggah Pegawai PPPK</label>
-                                    <input type="file" class="form-control" style="padding: 3px;" name="users" required />
+                                      <input type="file" class="form-control" style="padding: 3px;" name="users" required />
                                 </div>
                                 <div class="col-md-6 align-self-center mt-4">
                                     <button type="submit" class="btn btn-success w-50" name="upload">Unggah</button>
@@ -35,7 +35,6 @@
                                 </div>
                             </div>
                         </form>
-
                     </div>
                 </div>
             </div>
