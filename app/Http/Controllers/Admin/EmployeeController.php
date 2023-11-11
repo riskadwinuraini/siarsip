@@ -52,7 +52,7 @@ class EmployeeController extends Controller
             'name' => 'required|string',
             'email' => 'required|email|unique:users',
             'nip' => 'required|max:18',
-            'type_pppk' => 'required',
+            'type_pegawai' => 'required',
             'gender' => 'required',
             'status' => 'required',
             'no' => 'required',

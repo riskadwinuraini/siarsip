@@ -58,7 +58,7 @@
                       No. Hp
                     </th>
                     <th>
-                      Jenis User
+                      Jenis Pegawai
                     </th>
                     <th>
                         Status

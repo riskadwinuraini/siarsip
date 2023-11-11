@@ -140,7 +140,10 @@
                                 Email
                               </th>
                               <th>
-                                No.Hp
+                                No. HP
+                              </th>
+                              <th>
+                                Jenis Pegawai
                               </th>
                               <th>
                                   Status
@@ -155,6 +158,7 @@
                                   <td>{{ $employee->gender }}</td>
                                   <td>{{ $employee->email }}</td>
                                   <td>{{ $employee->no }}</td>
+                                  <td>{{ $employee->type_pegawai }}</td>
                                   <td><span class="badge badge-primary">{{ $employee->status }}</span></td>
                                 </tr>
                             @endforeach
