@@ -21,9 +21,9 @@ class UserSeeder extends Seeder
         ]);
 
         $employee = User::create([
-            'name' => 'Apin',
-            'email' => 'apin@mail.com',
-            'password' => Hash::make('apin123'),
+            'name' => 'riska',
+            'email' => 'riska@mail.com',
+            'password' => Hash::make('riska123'),
         ]);
 
 

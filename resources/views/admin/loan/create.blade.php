@@ -20,7 +20,7 @@
                 <form class="forms-sample" action="{{ route('admin.loan.store') }}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label>Nip</label>
+                        <label>NIP</label>
                         <select name="user_id" class="form-control" id="user_id">
                             <option value="0">Pilih NIP</option>
                             @foreach ($employees as $employee)
