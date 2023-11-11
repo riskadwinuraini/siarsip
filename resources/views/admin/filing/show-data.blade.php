@@ -35,6 +35,11 @@
                                 <td >{{ $data_user->work_unit != null  ? ucwords($data_user->work_unit) : '-'}}</td>
                             </tr>
                             <tr>
+                                <td width="20%">Jenis User</td>
+                                <td width="1%">:</td>
+                                <td >{{ $data_user->type_pegawai != null  ? ucwords($data_user->type_pegawai) : '-'}}</td>
+                            </tr>
+                            <tr>
                                 <td width="20%">Status</td>
                                 <td width="1%">:</td>
                                 <td >{{ ucwords($data_user->status) }}</td>
@@ -56,7 +61,7 @@
                 </div>
                 <div class="card-footer">
 
-                    <a href="{{ route('admin.filing.index') }}" class="btn btn-light">Cancel</a>
+                    <a href="{{ route('admin.filing.index') }}" class="btn btn-light">Kembali</a>
                 </div>
             </div>
         </div>

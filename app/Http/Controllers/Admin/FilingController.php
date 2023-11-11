@@ -16,7 +16,7 @@ use Illuminate\Support\Str;
 class FilingController extends Controller
 {
     public function index(Request $request) {
-        $user = User::select('id', 'nip')->where('nip','!=',null)->where('type_pppk','p3k')->get();
+        $user = User::select('id', 'nip')->where('nip','!=',null)->where('type_pegawai','p3k')->get();
         $data_user = null;
         $data_upload = null;
         if ($request->has('nip') || Session::has('nip')) {

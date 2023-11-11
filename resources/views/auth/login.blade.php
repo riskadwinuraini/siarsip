@@ -12,10 +12,10 @@
               </center>
               </div>
               <center>
-                <h4>Login sebagai admin</h4>
+                <h4>Masuk sebagai Admin</h4>
               </center>
               
-              <h6 class="font-weight-light"> Masukkan email dan password dengan benar.</h6>
+              <h6 class="font-weight-light"> Masukkan Email dan Password dengan benar</h6>
               <form class="pt-1" method="POST" action="{{ route('login') }}" autocomplete="off">
                 @csrf
                 <div class="form-group">
@@ -35,7 +35,7 @@
                   @enderror
                 </div>
                 <div class="mt-3">
-                  <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit">SIGN IN</button>
+                  <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit">MASUK</button>
                 </div>
                 <div class="text-center mt-4 font-weight-light">
                   {{-- Don't have an account? <a href="{{ route('register')}}" class="text-primary">Create</a> --}}

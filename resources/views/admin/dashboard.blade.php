@@ -86,7 +86,7 @@
             <a href="" class="text-decoration-none" id="berkas-masuk">
                 <div class="card card-dark-blue">
                     <div class="card-body">
-                        <p class="mb-4">Berkas masuk</p>
+                        <p class="mb-4">Berkas Masuk</p>
                         <p class="fs-30 mb-2">{{ $peminjaman->count(); }}</p>
                         <p>2023-2028</p>
                     </div>
@@ -97,7 +97,7 @@
             <a href="" class="text-decoration-none" id="berkas-keluar">
                 <div class="card card-light-blue">
                 <div class="card-body">
-                    <p class="mb-4">Berkas keluar</p>
+                    <p class="mb-4">Berkas Keluar</p>
                     <p class="fs-30 mb-2">{{ $pengembalian->count() }}</p>
                     <p>2023-2028</p>
                 </div>
@@ -108,7 +108,7 @@
             <a href="" class="text-decoration-none" id="total-berkas">
                 <div class="card card-light-danger">
                     <div class="card-body">
-                        <p class="mb-4">Total berkas</p>
+                        <p class="mb-4">Total Berkas</p>
                         <p class="fs-30 mb-2">{{ $count_typeFiles }}</p>
                         <p>2023-2028</p>
                     </div>
@@ -168,7 +168,7 @@
         <div class="col-md-12 my-4 hidden" id="data-berkas-masuk">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Data Bekas Masuk</h4>
+                    <h4 class="card-title">Data Berkas Masuk</h4>
                 </div>
                 <div class="card-body">
                     <table class="table table-striped">
@@ -176,7 +176,7 @@
                             <tr>
                             <th>Nama Peminjam</th>
                             <th>Tanggal Pinjam</th>
-                            <th>Tanggal Pengembalian</th>
+                            <th>Tanggal Kembali</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -195,7 +195,7 @@
         <div class="col-md-12 my-4 hidden" id="data-berkas-keluar">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Data Bekas Keluar</h4>
+                    <h4 class="card-title">Data Berkas Keluar</h4>
                 </div>
                 <div class="card-body">
                     <table class="table table-striped">
@@ -203,7 +203,7 @@
                             <tr>
                             <th>Nama Peminjam</th>
                             <th>Tanggal Pinjam</th>
-                            <th>Tanggal Pengembalian</th>
+                            <th>Tanggal Kembali</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -222,7 +222,7 @@
         <div class="col-md-12 my-4 hidden" id="data-total-berkas">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Total Data Bekas Keluar</h4>
+                    <h4 class="card-title">Data Jenis Berkas</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">

@@ -38,7 +38,7 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Data Pemberkasan</h4>
+                <h4 class="card-title">Data Pemberkasan PPPK</h4>
                 {{-- <div class="card-description">
                     <a href="{{ route('admin.filing.create') }}" class="btn btn-primary">Tambah Pemberkasan Baru</a>
                 </div> --}}
@@ -46,9 +46,9 @@
                     <div class="col-md-10">
                         <form action="{{ route('admin.filing.index') }}" method="GET">
                         <div class="form-group">
-                            <label class="fw-bold">Search NIP</label>
+                            <label class="fw-bold">Cari NIP</label>
                             <select name="nip" class="form-control" id="nip">
-                                <option value="">Selected Option</option>
+                                <option value="">Pilih NIP</option>
                                 @foreach ($users as $user)
                                     <option value="{{ $user->id }}" {{ request('nip') == $user->id ? 'selected' : '' }}>{{ $user->nip }}</option>
                                 @endforeach
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                     <div class="col-md-2 align-self-center">
-                        <button class="btn btn-primary w-100">Search</button>
+                        <button class="btn btn-primary w-100">Cari</button>
                     </form>
                     </div>
                 </div>

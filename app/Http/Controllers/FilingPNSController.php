@@ -14,7 +14,7 @@ use Illuminate\Support\Str;
 class FilingPNSController extends Controller
 {
     public function index(Request $request) {
-        $user = User::select('id', 'nip')->where('nip','!=',null)->where('type_pppk','pns')->get();
+        $user = User::select('id', 'nip')->where('nip','!=',null)->where('type_pegawai','pns')->get();
         $data_user = null;
         $data_upload = null;
         if ($request->has('nip') || Session::has('nip')) {
