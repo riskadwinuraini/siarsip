@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\FileLoan;
 use App\Models\TypeFile;
+use App\Models\User;
 use App\Models\UserFile;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
@@ -26,7 +27,8 @@ class DashboardController extends Controller
 
         $peminjaman =  FileLoan::where('status', 0)->get();
         $pengembalian = FileLoan::where('status', 1)->get();
-        
+        $employees = User::where('nip','!=',null)->paginate(10);
+        $count_user = User::select('id', 'nip')->where('nip','!=',null)->count();
         return view('admin.dashboard',[
             'employees' => $employees,
             'count_user' => $count_user,

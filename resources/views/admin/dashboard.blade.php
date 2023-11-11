@@ -11,6 +11,7 @@
 @endpush
 @push('scripts')
     <script>
+
        @if(Session::has('message'))
             toastr.options =
             {
@@ -18,8 +19,11 @@
                 "progressBar" : true
             }
                     toastr.success("{{ session('message') }}");
-        @endif 
+        @endif
         $(document).ready(function() {
+            $('.page-item .active').on('click', function() {
+                $('#data-pegawai').toggleClass('hidden');
+            });
             $('#pegawai').on('click', function(e) {
                 e.preventDefault(); // Menghentikan aksi default (navigasi ke href)
 
@@ -113,7 +117,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12 my-4 hidden" id="data-pegawai">
+        <div class="col-md-12 my-4" id="data-pegawai">
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Data Pegawai</h4>
@@ -157,6 +161,7 @@
                           </tbody>
                         </table>
                     </div>
+                    {{ $employees->links() }}
                 </div>
             </div>
         </div>
