@@ -90,6 +90,7 @@
                 </tbody>
               </table>
             </div>
+            {{ $employees->links()}}
           </div>
         </div>
     </div>
@@ -105,8 +106,11 @@
 
     <script>
       $(document).ready(function () {
-          $('#exampleTable').DataTable();
-      });
+            // Inisialisasi DataTables dengan opsi pencarian
+            var table = $('#exampleTable').DataTable({
+                "paging": false, // Optional: Menonaktifkan paging jika sudah menggunakan pagination Laravel
+            });
+        });
   </script>
   
 @endpush
