@@ -7,6 +7,8 @@
 
         <title>siarsipbkpsdmkabbondowoso.id</title>
 
+
+        <link href="assets/images/file-icons/Logo.png" rel="icon">
         <!-- plugins:css -->
         <link rel="stylesheet" href="/assets/vendors/feather/feather.css">
         <link rel="stylesheet" href="/assets/vendors/ti-icons/css/themify-icons.css">
@@ -17,7 +19,7 @@
         <!-- inject:css -->
         <link rel="stylesheet" href="/assets/css/vertical-layout-light/style.css">
         <!-- endinject -->
-        <link rel="shortcut icon" href="/assets/images/favicon.png" />
+        {{-- <link rel="shortcut icon" href="/assets/images/favicon.png" /> --}}
     </head>
     <body>
         

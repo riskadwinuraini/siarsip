@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="table-responsive">
-              <table class="table table-striped">
+              <table class="table table-striped" id="exampleTable">
                 <thead>
                   <tr>
                     <th>
@@ -90,9 +90,23 @@
                 </tbody>
               </table>
             </div>
-            {{ $employees->links() }}
           </div>
         </div>
     </div>
 </div>
 @endsection
+
+@push('style')
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+@endpush
+@push('scripts')
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="//cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+          $('#exampleTable').DataTable();
+      });
+  </script>
+  
+@endpush
