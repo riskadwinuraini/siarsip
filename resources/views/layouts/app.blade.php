@@ -18,7 +18,7 @@
         <!-- inject:css -->
         <link rel="stylesheet" href="/assets/css/vertical-layout-light/style.css">
         <!-- endinject -->
-        <link rel="shortcut icon" href="/assets/images/favicon.png" />
+        <link rel="shortcut icon" href="/assets/images/file-icons/logo.png" />
 
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
         @stack('style')

@@ -37,8 +37,8 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->name }}</td>
                                 <td>
-                                  <a href="{{ route('admin.jenis-pns.edit', $item->id) }}" class="btn btn-info">Edit</a>
-                                  <form action="{{ route('admin.jenis-pns.destroy', $item->id) }}" method="POST">
+                                  <a href="{{ route('admin.jenis-pns.edit', $item->id) }}" class="btn btn-info"  style="display: inline-block; margin-right: 5px;">Edit</a>
+                                  <form action="{{ route('admin.jenis-pns.destroy', $item->id) }}" method="POST" style="display: inline-block;">
                                       @csrf
                                       @method('DELETE')
                                       <button class="btn btn-danger" type="submit">Hapus</button>
