@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('nip', 20)->nullable();
-            $table->enum('type_pppk', ['p3k', 'pns'])
+            $table->enum('type_pegawai', ['p3k', 'pns'])
                 ->default('p3k');
             $table->string('no', 13)->nullable();
             $table->string('work_unit')->nullable();

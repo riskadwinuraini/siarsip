@@ -6,17 +6,19 @@ use App\Http\Controllers\Controller;
 use App\Models\TypeFile;
 use App\Models\User;
 use App\Models\UserFile;
-use App\Service\UserFileService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 class FilingController extends Controller
 {
     public function index(Request $request) {
-        $user = User::select('id', 'nip')->where('nip','!=',null)->where('type_pegawai','p3k')->get();
+
+        $user = User::role('employee')
+                ->select('id', 'nip')
+                ->where('type_pegawai','p3k')->get();
+
         $data_user = null;
         $data_upload = null;
         if ($request->has('nip') || Session::has('nip')) {

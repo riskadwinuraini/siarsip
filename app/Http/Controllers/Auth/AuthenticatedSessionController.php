@@ -37,6 +37,8 @@ class AuthenticatedSessionController extends Controller
         $user = Auth::user();
         if ($user->hasRole('admin')) {
             return 'admin.dashboard';
+        } elseif ($user->hasRole('employee')) {
+          return 'employee.dashboard';  
         }else{
             return back();
         }

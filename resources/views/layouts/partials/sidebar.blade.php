@@ -66,20 +66,6 @@
           </div>
         </li>
     @endrole
-    @role('employee')
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-            <i class="icon-head menu-icon"></i>
-            <span class="menu-title">Master Data</span>
-            <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
-            <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{ route('admin.filing.index') }}"> Pemberkasan </a></li>
-            </ul>
-            </div>
-        </li>
-    @endrole
 
     </ul>
   </nav>
