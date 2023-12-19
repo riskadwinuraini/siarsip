@@ -38,7 +38,7 @@
                     </div>
                     <div class="form-group">
                         <label for="information">Keterangan</label>
-                        <textarea name="information" id="information" cols="30" rows="10" class="form-control" required></textarea>
+                        <textarea name="information" id="information" cols="30" rows="10" class="form-control" placeholder="Masukkan jenis dokumen yang dipinjam..." required></textarea>
                     </div>
                     <div class="form-group">
                         <label>Tanggal Pinjaman</label>
