@@ -79,11 +79,11 @@
                         <td>{{ $employee->type_pegawai }}</td>
                         <td>{{ $employee->status }}</td>
                         <td>
-                          <form action="{{ route('admin.employee.destroy', $employee->id) }}" method="POST">
+                          <form action="{{ route('admin.employee.destroy', $employee->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus?')">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">Hapus</button>
-                        </form>
+                            <button type="submit" class="btn btn-danger">Hapus</button>
+                          </form>
                         </td>
                       </tr>
                   @endforeach

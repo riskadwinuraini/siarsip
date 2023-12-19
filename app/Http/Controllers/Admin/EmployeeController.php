@@ -99,15 +99,10 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::findOrFail($id);
+        $user = User::find($id);
+        $user->delete();
 
-        if ($user->hasRole('employee')) {
-            $user->delete();
-
-            return redirect()->route('admin.employee.index')->with('success', 'Pengguna berhasil dihapus.');
-        } else {
-            return redirect()->route('admin.employee.index')->with('error', 'Pengguna tidak memiliki peran "employee".');
-        }
+        return back();
     }
 
     function uploadPPPK(Request $request) {

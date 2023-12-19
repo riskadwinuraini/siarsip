@@ -21,7 +21,7 @@ class UsersPNSImport implements ToModel, WithBatchInserts, WithChunkReading
             'nip' => $row[0],
             'name' => $row[1],
             'gender' => $row[2],
-            'type_pppk' => $row[3] == 'PNS' ? 'pns' : 'p3k',
+            'type_pegawai' => 'pns',
             'work_unit' => $row[4],
             'no' => $row[5],
             'email' => $row[6] ,
