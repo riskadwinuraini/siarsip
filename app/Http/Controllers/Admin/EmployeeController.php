@@ -107,7 +107,7 @@ class EmployeeController extends Controller
 
     function uploadPPPK(Request $request) {
         ini_set('max_execution_time', 300);
-        Excel::import(new UsersPPPKImport, $request->file('users'));
+         Excel::import(new UsersPPPKImport, $request->file('users'));
         return redirect()->route('admin.employee.index')->with('success', 'Pengguna berhasil diupload.');
 
         // return User::latest()->get();
