@@ -33,7 +33,7 @@
                     </tr>
                     <tr>
                         <td>3.</td>
-                        <td>Mengisi daftar riwayat hidup (DRH)</td>
+                        <td>Mengisi Daftar Riwayat Hidup (DRH)</td>
                         <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
                     </tr>
                     <tr>

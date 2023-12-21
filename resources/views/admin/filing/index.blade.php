@@ -81,7 +81,7 @@
                                 <td >{{ $data_user->work_unit != null  ? ucwords($data_user->work_unit) : '-'}}</td>
                             </tr>
                             <tr>
-                                <td width="20%">Status</td>
+                                <td width="2PHP0%">Status</td>
                                 <td width="1%">:</td>
                                 <td >{{ ucwords($data_user->status) }}</td>
                             </tr>
