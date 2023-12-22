@@ -42,7 +42,7 @@ class ArchiveController extends Controller
         $attr = $request->all();
         TypeFile::create($attr);
 
-        return back();
+        return to_route('admin.jenis-pppk.index');
     }
 
     /**

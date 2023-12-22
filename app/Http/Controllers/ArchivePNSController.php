@@ -41,7 +41,7 @@ class ArchivePNSController extends Controller
         $attr = $request->all();
         TypeFile::create($attr);
 
-        return back();
+        return to_route('admin.jenis-pns.index');
     }
 
     /**
