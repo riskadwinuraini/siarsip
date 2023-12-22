@@ -29,8 +29,8 @@
                       <tr>
                         <td>{{ $file->user->name }}</td>
                         <td>{{ $file->information }}</td>
-                        <td>{{ $file->loan_date }}</td>
-                        <td>{{ $file->return_date }}</td>
+                        <td>{{ date('d-m-Y', strtotime($file->loan_date)) }}</td>
+                        <td>{{ date('d-m-Y', strtotime($file->return_date)) }}</td>
                         <td>
                           <input type="checkbox" value="{{ $file->status }}" {{ ($file->status == 1) ? 'checked' : '' }} data-id="{{ $file->id }}" class="status-checkbox">
                         </td>

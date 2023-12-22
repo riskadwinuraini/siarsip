@@ -9,9 +9,9 @@
     <tbody>
         @foreach ($loanHistories as $file)
             <tr>
-            <td>{{ $file->user->name }}</td>
-            <td>{{ $file->loan_date }}</td>
-            <td>{{ $file->return_date }}</td>
+                <td>{{ $file->user->name }}</td>
+                <td>{{ date('d-m-Y', strtotime($file->loan_date)) }}</td>
+                <td>{{ date('d-m-Y', strtotime($file->return_date)) }}</td>
             </tr>
         @endforeach
     </tbody>
