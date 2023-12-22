@@ -72,7 +72,7 @@ class ArchiveController extends Controller
         $typeFile = TypeFile::find($id);
         $typeFile->update($request->all());
 
-        return back();
+        return to_route('admin.jenis-pppk.index');
     }
 
     /**
