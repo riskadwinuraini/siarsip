@@ -61,7 +61,7 @@
                 </div>
                 <div class="card-footer">
 
-                    <a href="{{ route('admin.filing.index') }}" class="btn btn-light">Kembali</a>
+                    <a href="/admin/pemberkasan?nip={{ $data_user->id }}" class="btn btn-light">Kembali</a>
                 </div>
             </div>
         </div>
